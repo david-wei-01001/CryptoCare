@@ -2,7 +2,6 @@ import React from 'react';
 import './FeaturedCharities.css';
 import CharityCard from '../../Charities/CharityCard/CharityCard'
 
-
 const CharityData = [
   {
     "description": "Together, we create science-based solutions for a healthy ocean and the wildlife and communities that depend on it.. You love the ocean as much as we do, and we can’t protect it without you.\n\nA healthy ocean means more than beautiful coasts and vibr",
