@@ -10,11 +10,11 @@ const dummyAssetData = [
     "usdValue": 1203.23
   },
   {
-    "name": "Bitcoin",
-    "symbol": "BTC",
-    "img": `${process.env.PUBLIC_URL}/bitcoin.svg` ,
-    "amount": 0.020,
-    "usdValue": 1203.23
+    "name": "Ethereum",
+    "symbol": "ETH",
+    "img": `${process.env.PUBLIC_URL}/ethereum.svg` ,
+    "amount": 1.031,
+    "usdValue": 3202.23
   }
 ];
 
