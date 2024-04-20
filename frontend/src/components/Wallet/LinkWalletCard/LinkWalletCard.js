@@ -13,6 +13,11 @@ const LinkWalletCard = () => {
           placeholder="Enter your MetaMask ID"
           className="wallet-input"
         />
+        <input
+          type="text"
+          placeholder="Enter the coin you are linking"
+          className="coin-input"
+        />
         <LargeButton onClick={() => {}} text="Link new Wallet" />
       </div>
     </div>
