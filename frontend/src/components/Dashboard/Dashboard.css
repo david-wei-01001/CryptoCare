@@ -1,0 +1,15 @@
+.dashboard-container {
+  display: flex;
+  height: 100%;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #02030F;
+  height: 100%;
+}
