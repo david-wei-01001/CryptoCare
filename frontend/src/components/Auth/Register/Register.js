@@ -43,6 +43,13 @@ function Register() {
         email: email,
         totalDonations: 0,
         donationHistory: [],
+        // donationHistory: [
+        //     { CharityName: "Charity A", DonationAmount: 50, DonationDate: "2021-01-01" },
+        //     { CharityName: "Charity B", DonationAmount: 75, DonationDate: "2021-02-01" },
+        //     { CharityName: "Charity C", DonationAmount: 85, DonationDate: "2021-03-01" },
+        //     { CharityName: "Charity D", DonationAmount: 95, DonationDate: "2021-04-01" }
+        //   ],
+
         walletAddresses: {
           bitcoin: "",  // Empty string indicating no Bitcoin address provided yet
           ethereum: ""  // Empty string indicating no Ethereum address provided yet

@@ -7,7 +7,7 @@ import FeaturedCharities from './FeaturedCharities/FeaturedCharities';
 import DonationHistory from './DonationHistory/DonationHistory';
 import SmallStrokedButton from '../Button/SmallStrokedButton';
 import { useUser } from '../contexts/UserContext.js';
-import { firestore } from '../FireBase/firebase.js'; // Adjust the path to your Firebase config
+import { firestore } from '../FireBase/firebase.js';
 import { doc, getDoc } from 'firebase/firestore';
 
 const Dashboard = () => {

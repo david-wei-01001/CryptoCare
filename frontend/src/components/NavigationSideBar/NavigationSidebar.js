@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './NavigationSidebar.css';
 import NavbarLinks from './NavbarLinks';
 import { useUser } from '../contexts/UserContext.js';
-import { firestore } from '../FireBase/firebase.js'; // Adjust the path to your Firebase config
+import { firestore } from '../FireBase/firebase.js';
 import { doc, getDoc } from 'firebase/firestore';
 
 const NavigationSidebar = () => {

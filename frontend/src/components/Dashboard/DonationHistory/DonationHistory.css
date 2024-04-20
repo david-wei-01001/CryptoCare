@@ -4,10 +4,51 @@
   background-color: var(--light-gray--background);
   display: flex;
   justify-content: center;
-  align-items: center; /* Align items in the center vertically */
+  align-items: flex-start; /* Align items to the top vertically */
   box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
 }
 
 .donation-history-card {
   color: var(--med-gray--text)
+}
+
+.donation-history-entry {
+  display: flex;
+  justify-content: space-between; /* Space between the main sections */
+  align-items: center; /* Vertically center the content */
+  background-color: #E0E0FF; /* Light purple background */
+  border-radius: 12px; /* Rounded corners for each entry */
+  margin-bottom: 10px; /* Spacing between entries */
+  margin-top: 13px; /* Spacing between entries */
+  padding: 12px; /* Padding inside each entry */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 10cm;
+}
+
+.donation-charity-name {
+  flex-grow: 1; /* Takes up the maximum width */
+  font-weight: 600; /* Semi-bold font */
+  margin-right: 16px; /* Space between charity name and amount/date */
+}
+
+.donation-detail {
+  display: flex;
+  flex-direction: column; /* Stack amount and date */
+  align-items: flex-end; /* Aligns amount and date to the right */
+  justify-content: center; /* Center the content vertically */
+  min-width: 100px; /* Minimum width for the amount/date section */
+}
+
+.donation-charity-name {
+  font-weight: 600;
+  margin-right: auto; /* Pushes other items to the right */
+}
+
+.donation-amount {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.donation-date {
+  font-size: 0.9em;
 }
