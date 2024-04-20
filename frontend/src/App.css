@@ -23,6 +23,18 @@
   pointer-events: none;
 }
 
+.weight-500 {
+  font-weight: 500;
+}
+
+.weight-600 {
+  font-weight: 600;
+}
+
+.med-gray-text {
+  color: var(--med-gray--text);
+}
+
 .sidebar {
   width: 250px;
   background-color: #02030F;
