@@ -20,7 +20,7 @@ const Wallet = () => {
         <div className="bottom-section">
           <div className="assets-section">
             <div className="header-section">
-              <h1 className="header">Featured Charities</h1>
+              <h1 className="header">Assets</h1>
             </div>
             <Assets />
           </div>
