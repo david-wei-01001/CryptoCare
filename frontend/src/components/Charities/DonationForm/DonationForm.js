@@ -50,6 +50,8 @@ const DonationForm = ({ charity, onClose }) => {
       donationData.push(ethereumDonation);
     }
     console.log(donationData);
+
+    // TODO: store in the database
   };
 
   const handleDonationAmountChange = (coin, donationAmount) => {

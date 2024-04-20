@@ -41,14 +41,17 @@ function Register() {
         firstName: firstName,
         lastName: lastName,
         email: email,
-        totalDonations: 0,
-        donationHistory: [],
-        // donationHistory: [
-        //     { CharityName: "Charity A", DonationAmount: 50, DonationDate: "2021-01-01" },
-        //     { CharityName: "Charity B", DonationAmount: 75, DonationDate: "2021-02-01" },
-        //     { CharityName: "Charity C", DonationAmount: 85, DonationDate: "2021-03-01" },
-        //     { CharityName: "Charity D", DonationAmount: 95, DonationDate: "2021-04-01" }
-        //   ],
+        // totalBitcoin: 0,
+        // totalETH: 0,
+        // donationHistory: [],
+        totalBitcoin: 0.1,
+        totalETH: 1,
+        donationHistory: [
+            { CharityName: "Charity A", BitcoinDonationAmount: 0.01, ETHDonationAmount: 0.1, DonationDate: "2021-01-01" },
+            { CharityName: "Charity B", BitcoinDonationAmount: 0.02, ETHDonationAmount: 0.2, DonationDate: "2021-02-01" },
+            { CharityName: "Charity C", BitcoinDonationAmount: 0.03, ETHDonationAmount: 0.3, DonationDate: "2021-03-01" },
+            { CharityName: "Charity D", BitcoinDonationAmount: 0.04, ETHDonationAmount: 0.4, DonationDate: "2021-04-01" }
+          ],
 
         walletAddresses: {
           bitcoin: "",  // Empty string indicating no Bitcoin address provided yet
