@@ -9,6 +9,7 @@ function Login() {
   const [errorMessage, setErrorMessage] = useState('');  // To handle and display errors
   const [successMessage, setSuccessMessage] = useState(''); // State to store success message
 
+  const history = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +22,11 @@ function Login() {
       let successMessage = 'You have logged in successfully!';
       setSuccessMessage(successMessage); // Update success message state to display to the user
       
-      // TODO: Redirect the user or update the application state as needed
+      // Redirect the user to dashboard
+      setTimeout(() => {
+        history.push('/dashboard'); // Redirect to Dashboard after message display
+      }, 2000); // Redirect after 2 seconds
+
     } catch (error) {
       console.error('Login error:', error);
       let errorMessage = '';
