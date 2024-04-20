@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import './Login.css';
 
@@ -9,7 +9,7 @@ function Login() {
   const [errorMessage, setErrorMessage] = useState('');  // To handle and display errors
   const [successMessage, setSuccessMessage] = useState(''); // State to store success message
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,7 +24,7 @@ function Login() {
       
       // Redirect the user to dashboard
       setTimeout(() => {
-        history.push('/dashboard'); // Redirect to Dashboard after message display
+        navigate('/dashboard'); // Redirect to Dashboard after message display
       }, 2000); // Redirect after 2 seconds
 
     } catch (error) {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // Import Firebase services
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
@@ -13,7 +13,7 @@ function Register() {
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,7 +35,7 @@ function Register() {
 
       setSuccessMessage('Registration successful! Redirecting to login...');
       setTimeout(() => {
-        history.push('/login'); // Redirect to login page after message display
+        navigate('/login'); // Redirect to Login after message display
       }, 2000); // Redirect after 2 seconds
 
     } catch (error) {
