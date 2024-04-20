@@ -12,6 +12,13 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      <style>
+        {`
+        body {
+          font-family: 'Lexend', sans-serif;
+        }
+        `}
+      </style>
        <Router>
         <Routes>
           <Route path="/" element={<Login />} />
