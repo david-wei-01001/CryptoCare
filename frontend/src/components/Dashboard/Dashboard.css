@@ -1,11 +1,6 @@
 .dashboard-container {
   display: flex;
-  height: 100%;
-}
-
-.content {
-  flex: 1;
-  padding: 20px;
+  height: 100vh;
 }
 
 .sidebar {
@@ -13,3 +8,63 @@
   background-color: #02030F;
   height: 100%;
 }
+
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1% 4%;
+  width: 100%;
+}
+
+.dashboard-content > * {
+  flex: 1;
+}
+
+.top-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bottom-section {
+  border: solid green;
+}
+
+.dashboard-content .header {
+  font-size: 25px;
+  text-align: left;
+}
+
+/* Donations Card  -- START */
+.donations-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.donations-card:first-child {
+  flex: 0 0 55%;
+  margin-right: 50px;
+}
+
+.donations-container {
+  background-color: yellow;
+  flex: 1;
+}
+
+/* Donations Card  -- END */
+
+
+/* Featured Charities -- START */
+
+.featured-charities-container {
+  background-color: blue;
+  flex: 1;
+}
+
+.featured-charities {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
