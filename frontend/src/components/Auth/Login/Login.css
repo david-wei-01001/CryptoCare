@@ -1,0 +1,102 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.login-container {
+    display: flex;
+    height: 100%;
+}
+
+.left-section {
+    flex: 1.5;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-section {
+    flex: 1;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 80%;
+    max-width: 300px; /* Set a maximum width to ensure it doesn't exceed a certain size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.logo h1 {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.form-container {
+    width: 80%;
+    padding: 20px;
+    background-color: black;
+    border-radius: 8px;
+}
+
+.form-header {
+    text-align: center;
+}
+
+.form-body {
+    margin-top: 20px;
+}
+
+.form-body p {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.form-body p a {
+    color: blue;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}   
+
+.input-container label {
+    color: grey;
+}
+
+.password-input {
+    position: relative;
+    align-items: center; /* Center align content vertically */
+}
+
+.password-input input {
+    width: 40%;
+    padding: 10px;
+    border: 1px solid grey; /* Border color */
+    border-radius: 10px; /* Border radius to make it circular cornered */
+    background-color: black; /* Set background color to match the black container */
+    color: white; /* Set text color to white */
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1; /* Ensure eye icon is above input field */
+}
+
+.password-toggle i {
+    color: grey;
+}
+
+.password-input input::placeholder {
+    color: grey; /* Set placeholder text color to grey */
+}
+  
