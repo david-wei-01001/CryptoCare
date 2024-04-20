@@ -14,6 +14,19 @@ def get_nonprofits_by_cause(cause, api_key):
         page += 1
     return nonprofits
 
+def search_nonprofits_by_name(name, api_key):
+    url = f"https://api.every.org/v0.2/nonprofits/search?name={name}&apiKey={api_key}"
+    response = requests.get(url)
+    return response.json()['nonprofits']
+
+def get_nonprofit_details_by_ein(ein, api_key):
+    url = f"https://api.every.org/v0.2/nonprofits/{ein}/details?apiKey={api_key}"
+    response = requests.get(url)
+    return response.json()
+
+def filter_nonprofits_by_minimum_donation(nonprofits, min_donation):
+    return [np for np in nonprofits if np.get('minimum_donation', float('inf')) <= min_donation]
+
 def main():
     api_key = 'pk_live_e1cb482a00c0af01ab77898dbb56fe87'  # Replace with your actual API key
     causes = ['animals', 'environment', 'health', 'education']  # Add more causes as needed
