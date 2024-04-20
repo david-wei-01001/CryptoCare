@@ -35,7 +35,7 @@ const DonationHistory = () => {
   const sortedDonations = donationHistory.slice().sort((a, b) => new Date(b.DonationDate) - new Date(a.DonationDate));
 
   // Get the most recent 3 donations
-  const recentDonations = sortedDonations.slice(0, 3);
+  const recentDonations = sortedDonations.slice(0, 4);
 
   return (
     <div className="donation-history-container">
@@ -47,7 +47,8 @@ const DonationHistory = () => {
             <div key={index} className="donation-history-entry">
               <div className="donation-charity-name">{donation.CharityName}</div>
               <div className="donation-detail">
-              <div className="donation-amount">${donation.DonationAmount.toFixed(2)}</div>
+              <div className="donation-amount">₿{donation.BitcoinDonationAmount.toFixed(2)}</div>
+              <div className="donation-amount">Ξ{donation.ETHDonationAmount.toFixed(2)}</div>
               <div className="donation-date">{new Date(donation.DonationDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</div>
             </div>
             </div>

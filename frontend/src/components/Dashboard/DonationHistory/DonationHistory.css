@@ -4,7 +4,7 @@
   background-color: var(--light-gray--background);
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align items to the top vertically */
+  align-items: center; /* Align items to the top vertically */
   box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
 }
 
@@ -18,11 +18,11 @@
   align-items: center; /* Vertically center the content */
   background-color: #E0E0FF; /* Light purple background */
   border-radius: 12px; /* Rounded corners for each entry */
-  margin-bottom: 10px; /* Spacing between entries */
-  margin-top: 13px; /* Spacing between entries */
+  margin-bottom: 15px; /* Spacing between entries */
+  margin-top: 15px; /* Spacing between entries */
   padding: 12px; /* Padding inside each entry */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  width: 10cm;
+  width: 15cm;
 }
 
 .donation-charity-name {
@@ -45,7 +45,7 @@
 }
 
 .donation-amount {
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
