@@ -40,7 +40,13 @@ function Register() {
       await setDoc(doc(firestore, "users", user.uid), {
         firstName: firstName,
         lastName: lastName,
-        email: email
+        email: email,
+        totalDonations: 0,
+        donationHistory: [],
+        walletAddresses: {
+          bitcoin: "",  // Empty string indicating no Bitcoin address provided yet
+          ethereum: ""  // Empty string indicating no Ethereum address provided yet
+        }
       });
 
     } catch (error) {
