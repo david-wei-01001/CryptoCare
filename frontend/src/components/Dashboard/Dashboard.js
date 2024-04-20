@@ -1,11 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
 import NavigationSidebar from '../NavigationSideBar/NavigationSidebar';
 import Donations from './Donations/Donations';
-import FeaturedCharities from './FeaturedCharities';
+import FeaturedCharities from './FeaturedCharities/FeaturedCharities';
 import DonationHistory from './DonationHistory/DonationHistory';
+import SmallStrokedButton from '../Button/SmallStrokedButton'
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
+  const handleViewAllClick = () => {
+    navigate('/charities');
+  };
+
   return (
     <div className="dashboard-container">
       <div className="sidebar">
@@ -26,7 +34,11 @@ const Dashboard = () => {
 
         <div className="bottom-section">
           <div className="featured-charities">
-            <h1 className="header">Featured Charities</h1>
+            <div className="header-section">
+              <h1 className="header">Featured Charities</h1>
+              <SmallStrokedButton className="bttn" onClick={handleViewAllClick} text="View all"/>
+            </div>
+
             <FeaturedCharities />
           </div>
         </div>
