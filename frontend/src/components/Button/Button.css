@@ -10,14 +10,29 @@
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  height: 50px;
-  width: 200px;
+  height: 45px;
+  width: 180px;
   font-weight: 600;
   font-size: 18px;
   letter-spacing: 1px;
+  transition: all 0.5s ease;
 }
 
 .small-button:hover {
-  background-color: var(--black); /* Darker shade of blue on hover */
+  background-color: var(--black);
 }
+
+.stroke {
+  background-color: transparent;
+  border: solid var(--med-gray--text);
+  color: var(--med-gray--text);
+}
+
+.small-button.stroke:hover {
+  background-color: var(--black);
+  color: white;
+}
+
 /* SMALL BUTTON -- END */
+
+
