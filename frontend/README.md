@@ -76,6 +76,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 `cd frontend`
 `npm install react-scripts --save`
 npm install @fortawesome/fontawesome-free
+npm install @fortawesome/react-fontawesome
+npm install @fortawesome/free-solid-svg-icons
 `npm install -g serve`
 `npm install firebase`
 
