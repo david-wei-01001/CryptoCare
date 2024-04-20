@@ -14,12 +14,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background-color: #D5E6F2;
   padding: 50px;
-  border-radius: 8px;
+  border-radius: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  height: 400px;
-  width: 500px;
+  height: 80%;
+  width: 60%;
   z-index: 1000;
   display: flex; /* Use flexbox */
   flex-direction: column; /* Stack elements vertically */
@@ -31,9 +31,8 @@
 }
 
 .donation-form input {
-  width: 95%;
+  width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -54,4 +53,55 @@
   background-color: var(--primary-purple);
 }
 
+.coin-logo {
+  padding-right: 20px;
+}
+
+.flex-horizontal {
+  display: flex;
+  align-items: space-between;
+  gap: 15px;
+  justify-content: space-between;
+  flex: 1;
+  height: 60%;
+}
+
+.coin-card-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  margin-bottom: 5px;
+}
+
+.private-key-input {
+  margin-bottom: 30px;
+}
+
+.text-flex-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text-flex-child.right-align {
+  align-items: flex-end;
+}
+
+.text-flex-child input {
+  height: 15px;
+  width: 100px;
+}
+
+.coin-card-container .coin-logo {
+  width: 80px;
+}
+
+.donation-form .private-key-input {
+  margin-bottom: 40px;
+}
+
+.coin-container {
+  margin: 35px 0;
+}
 
