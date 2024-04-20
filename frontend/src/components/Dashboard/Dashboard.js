@@ -1,8 +1,9 @@
 import React from 'react';
 import './Dashboard.css';
 import NavigationSidebar from '../NavigationSideBar/NavigationSidebar';
-import Donations from './Donations';
+import Donations from './Donations/Donations';
 import FeaturedCharities from './FeaturedCharities';
+import DonationHistory from './DonationHistory/DonationHistory';
 
 const Dashboard = () => {
   return (
@@ -19,7 +20,7 @@ const Dashboard = () => {
 
           <div className="donations-card">
             <h1 className="header">Donation History</h1>
-            <Donations />
+            <DonationHistory />
           </div>
         </div>
 

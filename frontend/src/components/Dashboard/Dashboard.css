@@ -47,16 +47,29 @@
   margin-right: 50px;
 }
 
-.donations-container {
-  background-color: yellow;
-  flex: 1;
-}
 
 /* Donations Card  -- END */
 
 
-/* Featured Charities -- START */
+/* Donations History  -- START */
+.donations-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 
+.donations-card:first-child {
+  flex: 0 0 55%;
+  margin-right: 50px;
+}
+
+.donation-history-container {
+  background-color: green;
+}
+/* Donations History  -- END */
+
+
+/* Featured Charities -- START */
 .featured-charities-container {
   background-color: blue;
   flex: 1;

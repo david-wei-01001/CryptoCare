@@ -1,0 +1,23 @@
+/* SMALL BUTTON -- START */
+.small-button {
+  display: block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 10px;
+  background-color: var(--off-black);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  height: 50px;
+  width: 200px;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.small-button:hover {
+  background-color: var(--black); /* Darker shade of blue on hover */
+}
+/* SMALL BUTTON -- END */
