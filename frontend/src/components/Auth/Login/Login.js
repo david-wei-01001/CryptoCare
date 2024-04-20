@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../FireBase/firebase.js';
 import './Login.css';
 
 function Login() {
@@ -13,19 +14,16 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const auth = getAuth();
 
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       // User signed in successfully, 
-      console.log('Error during user logging in:', userCredential.user);
+      console.log('User logging in:', userCredential.user);
       let successMessage = 'You have logged in successfully!';
       setSuccessMessage(successMessage); // Update success message state to display to the user
       
       // Redirect the user to dashboard
-      setTimeout(() => {
-        navigate('/dashboard'); // Redirect to Dashboard after message display
-      }, 2000); // Redirect after 2 seconds
+      navigate('/dashboard');
 
     } catch (error) {
       console.error('Login error:', error);
@@ -54,7 +52,6 @@ function Login() {
       setErrorMessage(errorMessage); // Displaying a user-friendly error message
     }
   };
-  console.log("hello")
   return (
     <div className="Login">
       {/* Display error and success messages */}
@@ -62,26 +59,6 @@ function Login() {
       {successMessage && <div className="success-message">{successMessage}</div>}
       
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="firstName">First Name:</label>
-          <input
-            type="text"
-            id="firstName"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="lastName">Last Name:</label>
-          <input
-            type="text"
-            id="lastName"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-            required
-          />
-        </div>
         <div>
           <label htmlFor="email">Email:</label>
           <input
