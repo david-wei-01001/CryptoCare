@@ -1,3 +1,17 @@
+:root {
+  --black: #000000;
+  --off-black: #121212;
+  --primary-purple: #6147E4;
+  --accent-light-purple: #DFE6FD;
+  --accent-light-yellow: #FCFD9C;
+  --off-white--background: #FEFEFE;
+  --light-gray--background: #F7F7F7;
+  --off-black--background: #02030F;
+  --black--text: #000000;
+  --med-gray--text: #3A3A3A;
+  --light-gray--text: #ADADAD;
+}
+
 .App {
   text-align: center;
 }

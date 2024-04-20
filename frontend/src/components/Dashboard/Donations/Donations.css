@@ -1,0 +1,34 @@
+p {
+  margin: 0;
+}
+
+.donations-container {
+  background-color: #FBFD9C;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  box-shadow: 0px 4px 6px 1px rgba(0, 0, 0, 0.1);
+}
+
+.dontations-wrapper {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+/* Other styles for header and amount */
+.donation-header {
+  font-size: 20px;
+  color: #3A3A3A;
+}
+
+.donation-amount {
+  font-size: 65px;
+  color: #000000;
+}
+
+
