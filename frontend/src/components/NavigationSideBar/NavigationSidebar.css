@@ -20,27 +20,51 @@
 
 .profile-info {
   margin-top: auto;
+  width: 240px;
 }
 
 .profile-info img {
-  margin-left: -25px;
+  margin-left: -4px;
   margin-top: 5px;
   width: 45px;
 }
 
-.profile-info .navbar-link img {
-  padding-right: 13px;
+.profile-info .navbar-link {
+  padding-right: 0;
+  max-width: 100%;
 }
 
-/* Link styling */
+.profile-info span.navbar-text {
+  width: 300px;
+  text-align: left;
+}
+
+.profile-info .navbar-logo {
+  padding-right: 12px;
+}
+
+
 .navbar-link {
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 200px;
-  height: 45px;
+  max-width: 180px;
+  padding: 20px;
   margin-bottom: 30px;
   text-decoration: none;
+}
+
+/* Link styling */
+a.navbar-link {
+  max-width: 170px;
+  height: 20px;
+  width: 100%;
+}
+
+
+.navbar-link.active {
+  background-color: var(--primary-purple);
+  border-radius: 50px;
 }
 
 .navbar-link img {
