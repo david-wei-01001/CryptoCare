@@ -1,0 +1,40 @@
+/* SMALL BUTTON -- START */
+.small-button, .large-button {
+  display: block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 10px;
+  background-color: var(--off-black);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  height: 45px;
+  width: 180px;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 1px;
+  transition: all 0.5s ease;
+}
+
+.small-button:hover {
+  background-color: var(--black);
+}
+
+.stroke {
+  background-color: transparent;
+  border: solid var(--med-gray--text);
+  color: var(--med-gray--text);
+}
+
+.small-button.stroke:hover {
+  background-color: var(--black);
+  color: white;
+}
+
+/* SMALL BUTTON -- END */
+
+.large-button {
+  width: 100%;
+}

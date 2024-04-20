@@ -1,0 +1,59 @@
+.wallet-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.wallet-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1% 4%;
+  width: 100%;
+  gap: 20px;
+}
+
+.wallet-content h1 {
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+
+.wallet-content > * {
+  flex: 1;
+}
+
+.wallet-container .top-section {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
+  flex: 20%;
+}
+
+.wallet-container .bottom-section {
+  margin-top: 10px;
+  padding-bottom: 35px;
+}
+
+/* Assets -- START */
+.assets-section-container {
+  flex: 1;
+}
+
+.assets-section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.assets-section .header-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.assets-section .small-button.stroke {
+  margin-left: auto;
+  margin-right: 0;
+}
+

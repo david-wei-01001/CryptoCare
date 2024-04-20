@@ -1,0 +1,37 @@
+.assets {
+  height: 100%;
+}
+
+.asset-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.asset-container .left-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.left-aligned-flex {
+  text-align: left;
+}
+
+.left-aligned-flex * {
+    margin: 8px 0;
+}
+
+.left-aligned-flex .weight-600 {
+  font-size: 22px;
+}
+
+.left-aligned-flex .med-gray-text {
+  font-size: 18px;
+}
+
+.asset-img {
+  width: 110px;
+}

@@ -1,10 +1,45 @@
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --off-black: #121212;
+  --primary-purple: #6147E4;
+  --accent-light-purple: #DFE6FD;
+  --accent-light-yellow: #FCFD9C;
+  --off-white--background: #FEFEFE;
+  --light-gray--background: #F7F7F7;
+  --light-blue-background: #D5E6F2;
+  --off-black--background: #02030F;
+  --black--text: #000000;
+  --med-gray--text: #3A3A3A;
+  --light-gray--text: #ADADAD;
+}
+
 .App {
   text-align: center;
+  background-color: var(--off-white--background);
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.weight-500 {
+  font-weight: 500;
+}
+
+.weight-600 {
+  font-weight: 600;
+}
+
+.med-gray-text {
+  color: var(--med-gray--text);
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #02030F;
+  height: 100%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
