@@ -16,6 +16,7 @@
 
 .App {
   text-align: center;
+  background-color: var(--off-white--background);
 }
 
 .App-logo {

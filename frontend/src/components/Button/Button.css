@@ -1,5 +1,5 @@
 /* SMALL BUTTON -- START */
-.small-button {
+.small-button, .large-button {
   display: block;
   margin-top: 10px;
   margin-left: auto;
@@ -35,4 +35,6 @@
 
 /* SMALL BUTTON -- END */
 
-
+.large-button {
+  width: 100%;
+}

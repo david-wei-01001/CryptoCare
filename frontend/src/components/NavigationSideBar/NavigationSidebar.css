@@ -22,6 +22,16 @@
   margin-top: auto;
 }
 
+.profile-info img {
+  margin-left: -25px;
+  margin-top: 5px;
+  width: 45px;
+}
+
+.profile-info .navbar-link img {
+  padding-right: 13px;
+}
+
 /* Link styling */
 .navbar-link {
   display: flex;
@@ -29,7 +39,6 @@
   width: 100%;
   max-width: 200px;
   height: 45px;
-  /* border: solid gray; */
   margin-bottom: 30px;
   text-decoration: none;
 }

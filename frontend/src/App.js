@@ -5,6 +5,7 @@ import Register from './components/Auth/Register/Register';
 import Dashboard from './components/Dashboard/Dashboard';
 import Charities from './components/Charities/Charities';
 import Wallet from './components/Wallet/Wallet';
+import IndividualCharityPage from './components/Charities/IndividualCharityPage/IndividualCharityPage'
 
 
 import './App.css';
@@ -26,6 +27,7 @@ function App() {
           <Route path="/wallet" element={<Wallet />} />
           <Route path="/register" element={<Register />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/charities/:charityName" element={<IndividualCharityPage/>} />
         </Routes>
     </Router>
     </div>
