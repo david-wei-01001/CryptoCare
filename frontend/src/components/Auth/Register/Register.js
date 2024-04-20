@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // Import Firebase services
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-import { getFirestore, doc, setDoc } from 'firebase/firestore';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth, firestore } from '../../FireBase/firebase.js';
+import { doc, setDoc } from 'firebase/firestore';
 
 function Register() {
   const [firstName, setFirstName] = useState('');
@@ -17,26 +18,26 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    const auth = getAuth();
-    const firestore = getFirestore();
 
     try {
       // Use Firebase Auth to create a new user with email and password
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
+
+      // Clear form fields
+      setEmail('');
+      setPassword('');
+      setFirstName('');
+      setSuccessMessage('Registration successful! Redirecting to login...');
+      navigate('/');
       // Add first and last name to Firestore under 'users' collection
       await setDoc(doc(firestore, "users", user.uid), {
         firstName: firstName,
         lastName: lastName,
         email: email
       });
-
-      setSuccessMessage('Registration successful! Redirecting to login...');
-      setTimeout(() => {
-        navigate('/login'); // Redirect to Login after message display
-      }, 2000); // Redirect after 2 seconds
+      console.log("here");
 
     } catch (error) {
       console.error("Error registering user:", error.message);
@@ -64,7 +65,6 @@ function Register() {
 
   return (
     <div className="Register">
-      <h2>Register</h2>
       {/* Display error and success messages */}
       {errorMessage && <div className="error-message">{errorMessage}</div>}
       {successMessage && <div className="success-message">{successMessage}</div>}
