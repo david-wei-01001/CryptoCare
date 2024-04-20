@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { auth } from '../../FireBase/firebase.js';
+import LargeButton from '../../Button/LargeButton.js';
 import './Login.css';
 
 function Login() {
@@ -18,17 +19,17 @@ function Login() {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      // User signed in successfully, 
+      // User signed in successfully,
       console.log('User logging in:', userCredential.user);
       let successMessage = 'You have logged in successfully!';
       setSuccessMessage(successMessage); // Update success message state to display to the user
-      
+
       // Redirect the user to dashboard
       navigate('/dashboard');
 
@@ -63,24 +64,21 @@ function Login() {
       console.log(error.code);
     }
   };
-  
+
   return (
     <div className="login-container">
       <div className="left-section">
-        
-        
-        
         <div className="logo">
-        <h1>Charity Bitcoin App</h1>
-          <img src="/logo512.png" alt="Logo" />
+          <h1>Charity Bitcoin App</h1>
+          <img src={`${process.env.PUBLIC_URL}/login-main.png`} />
         </div>
       </div>
-      <div className="right-section">        
+      <div className="right-section">
         <div className="form-container">
           <div className="form-header">
             <h1>Login</h1>
             {/* Conditionally render the message or the error */}
-            {errorMessage 
+            {errorMessage
               ? <div className="error-message">{errorMessage}</div>
               : <p>Please enter your details.</p>
             }
@@ -100,7 +98,7 @@ function Login() {
               />
             </div>
             <div className="input-container">
-              
+
               <div className="password-input">
                 <input
                   type={showPassword ? 'text' : 'password'}
@@ -113,9 +111,10 @@ function Login() {
                   <i class="fa" aria-hidden="true"></i>
                 </div>
               </div>
-              
+
             </div>
-            <button type="submit" class="login-button">Log in</button>
+            <LargeButton className="login-bttn" onClick={handleSubmit} text="Login"/>
+            {/* <button type="submit" class="login-button">Log in</button> */}
             </form>
             <div class="signup-text">
               Don't have an account? <Link to="/register">Sign up</Link>
