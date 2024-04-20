@@ -42,7 +42,6 @@ function Register() {
         lastName: lastName,
         email: email
       });
-      console.log("here");
 
     } catch (error) {
       console.error("Error registering user:", error.message);

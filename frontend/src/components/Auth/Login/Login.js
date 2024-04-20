@@ -52,11 +52,15 @@ function Login() {
         case 'auth/network-request-failed':
           errorMessage = 'Network error. Please check your connection and try again.';
           break;
+        case 'auth/invalid-credential':
+          errorMessage = 'Incorrect email or password, please retry.';
+          break;
         default:
           errorMessage = 'An unexpected error occurred. Please try again.';
       }
 
       setErrorMessage(errorMessage); // Displaying a user-friendly error message
+      console.log(error.code);
     }
   };
   
@@ -120,40 +124,6 @@ function Login() {
         </div>
       </div>
     </div>
-
-
-
-
-    // <div className="Login">
-    //   {/* Display error and success messages */}
-    //   {errorMessage && <div className="error-message">{errorMessage}</div>}
-    //   {successMessage && <div className="success-message">{successMessage}</div>}
-      
-    //   <form onSubmit={handleSubmit}>
-      //   <div>
-      //     <label htmlFor="email">Email:</label>
-      //     <input
-      //       type="email"
-      //       id="email"
-      //       value={email}
-      //       onChange={(e) => setEmail(e.target.value)}
-      //       required
-      //     />
-      //   </div>
-      //   <div>
-      //     <label htmlFor="password">Password:</label>
-      //     <input
-      //       type="password"
-      //       id="password"
-      //       value={password}
-      //       onChange={(e) => setPassword(e.target.value)}
-      //       required
-      //     />
-      //   </div>
-      //   <button type="submit">Log in</button>
-      // </form>
-      // <p>Don't have an account?<Link to="/register">Sign up</Link></p>
-    // </div>
   );
 }
 
