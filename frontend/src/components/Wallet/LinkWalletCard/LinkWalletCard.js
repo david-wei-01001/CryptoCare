@@ -7,8 +7,13 @@ const LinkWalletCard = () => {
   return (
     <div className="link-wallet-card-container">
       <div className="wallet-card-wrapper">
-        <p className="wallet-card-header">Connect your crypto wallet to start donating</p>
-        <SmallButton onClick="" text="Link wallet"/>
+      <p className="wallet-card-header">Connect your MetaMask Wallet to start donating</p>
+        <input
+          type="text"
+          placeholder="Enter your MetaMask ID"
+          className="wallet-input"
+        />
+        <SmallButton onClick={() => {}} text="Link Wallet" />
       </div>
     </div>
   );
