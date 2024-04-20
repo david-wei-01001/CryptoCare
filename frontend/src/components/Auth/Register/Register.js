@@ -5,6 +5,7 @@ function Register() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,6 +13,7 @@ function Register() {
     console.log('First Name:', firstName);
     console.log('Last Name:', lastName);
     console.log('Email:', email);
+    console.log('Password:', password);
   };
 
   return (
@@ -45,6 +47,16 @@ function Register() {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="password">password:</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
