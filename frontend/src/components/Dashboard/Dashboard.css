@@ -62,6 +62,7 @@
 
 
 /* Donations History  -- START */
+
 .donations-card {
   display: flex;
   flex-direction: column;
@@ -73,9 +74,6 @@
   margin-right: 50px;
 }
 
-.donation-history-container {
-  background-color: green;
-}
 /* Donations History  -- END */
 
 
