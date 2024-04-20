@@ -3,10 +3,10 @@ from bitcoinlib.wallets import Wallet
 
 def get_bitcoin_balance(address):
     # API for mainnet wallet
-    # api_url = f"https://blockstream.info/api/address/{address}/utxo"
+    api_url = f"https://blockstream.info/api/address/{address}/utxo"
 
     # API for testnet wallet
-    api_url = f"https://mempool.space/testnet/api/address/{address}/utxo"
+    # api_url = f"https://mempool.space/testnet/api/address/{address}/utxo"
 
     # Make the API call
     response = requests.get(api_url)
