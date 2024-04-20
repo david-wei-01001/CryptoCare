@@ -2,6 +2,7 @@ import React from 'react';
 import NavigationSidebar from '../NavigationSideBar/NavigationSidebar';
 import Assets from './Assets/Assets';
 import WalletCard from './WalletCard/WalletCard';
+import LinkWalletCard from './LinkWalletCard/LinkWalletCard';
 import './Wallet.css';
 
 const Wallet = () => {
@@ -13,7 +14,8 @@ const Wallet = () => {
       <div className="wallet-content">
         <div className="top-section">
           <h1 className="header">Wallet</h1>
-          <WalletCard />
+          <LinkWalletCard />
+          {/* <WalletCard /> */}
         </div>
 
 
