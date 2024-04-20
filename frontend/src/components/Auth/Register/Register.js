@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // Import Firebase services
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-import { getFirestore, doc, setDoc } from 'firebase/firestore';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth, firestore } from '../../firebase';
+import { doc, setDoc } from 'firebase/firestore';
 
 function Register() {
   const [firstName, setFirstName] = useState('');
@@ -17,9 +18,6 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    const auth = getAuth();
-    const firestore = getFirestore();
 
     try {
       // Use Firebase Auth to create a new user with email and password
@@ -59,6 +57,7 @@ function Register() {
           errorMessage = 'An unexpected error occurred. Please try again.';
       }
       setErrorMessage(errorMessage); // Displaying a user-friendly error message
+      console.log(errorMessage);
     }
   };
 

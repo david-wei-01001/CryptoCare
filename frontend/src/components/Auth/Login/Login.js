@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firebase';
 import './Login.css';
 
 function Login() {
@@ -13,7 +14,6 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const auth = getAuth();
 
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
@@ -52,6 +52,7 @@ function Login() {
       }
 
       setErrorMessage(errorMessage); // Displaying a user-friendly error message
+      console.log(errorMessage);
     }
   };
   console.log("hello")
@@ -62,26 +63,6 @@ function Login() {
       {successMessage && <div className="success-message">{successMessage}</div>}
       
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="firstName">First Name:</label>
-          <input
-            type="text"
-            id="firstName"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="lastName">Last Name:</label>
-          <input
-            type="text"
-            id="lastName"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-            required
-          />
-        </div>
         <div>
           <label htmlFor="email">Email:</label>
           <input
