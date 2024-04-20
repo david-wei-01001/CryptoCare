@@ -52,11 +52,15 @@ function Login() {
         case 'auth/network-request-failed':
           errorMessage = 'Network error. Please check your connection and try again.';
           break;
+        case 'auth/invalid-credential':
+          errorMessage = 'Incorrect email or password, please retry.';
+          break;
         default:
           errorMessage = 'An unexpected error occurred. Please try again.';
       }
 
       setErrorMessage(errorMessage); // Displaying a user-friendly error message
+      console.log(error.code);
     }
   };
   
