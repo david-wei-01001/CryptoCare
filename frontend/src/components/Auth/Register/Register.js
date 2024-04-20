@@ -24,17 +24,20 @@ function Register() {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
+
+      // Clear form fields
+      setEmail('');
+      setPassword('');
+      setFirstName('');
+      setSuccessMessage('Registration successful! Redirecting to login...');
+      navigate('/');
       // Add first and last name to Firestore under 'users' collection
       await setDoc(doc(firestore, "users", user.uid), {
         firstName: firstName,
         lastName: lastName,
         email: email
       });
-
-      setSuccessMessage('Registration successful! Redirecting to login...');
-      setTimeout(() => {
-        navigate('/login'); // Redirect to Login after message display
-      }, 2000); // Redirect after 2 seconds
+      console.log("here");
 
     } catch (error) {
       console.error("Error registering user:", error.message);
@@ -62,7 +65,6 @@ function Register() {
 
   return (
     <div className="Register">
-      <h2>Register</h2>
       {/* Display error and success messages */}
       {errorMessage && <div className="error-message">{errorMessage}</div>}
       {successMessage && <div className="success-message">{successMessage}</div>}

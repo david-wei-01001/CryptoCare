@@ -18,14 +18,12 @@ function Login() {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       // User signed in successfully, 
-      console.log('Error during user logging in:', userCredential.user);
+      console.log('User logging in:', userCredential.user);
       let successMessage = 'You have logged in successfully!';
       setSuccessMessage(successMessage); // Update success message state to display to the user
       
       // Redirect the user to dashboard
-      setTimeout(() => {
-        navigate('/dashboard'); // Redirect to Dashboard after message display
-      }, 2000); // Redirect after 2 seconds
+      navigate('/dashboard');
 
     } catch (error) {
       console.error('Login error:', error);
