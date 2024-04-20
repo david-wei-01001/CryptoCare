@@ -1,0 +1,36 @@
+.wallet-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  text-align: left;
+}
+
+.individual-charity-content {
+  padding: 5% 4%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  margin-left: 0;
+}
+
+.individual-charity-content .small-button {
+  margin-left: 0;
+}
+
+.individual-charity-content h1 {
+  font-size: 45px;
+  font-weight: 600;
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.individual-charity-content .left-align-bttn {
+  margin-left: 0 !important;
+}
