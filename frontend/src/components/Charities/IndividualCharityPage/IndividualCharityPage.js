@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import NavigationSidebar from '../../NavigationSideBar/NavigationSidebar';
 import './IndividualCharityPage.css';
 import SmallButton from '../../Button/SmallButton';
+import DonationForm from '../DonationForm/DonationForm';
 
 const dummyCharityData = [
   {
@@ -27,52 +28,44 @@ const dummyCharityData = [
 
 const IndividualCharityPage = () => {
   const { charityName } = useParams();
+  const [showDonationModal, setShowDonationModal] = useState(false);
 
   // Find the charity data based on the charity name
   const charity = dummyCharityData.find(
     (charity) => charity.name.replace(/\s+/g, '-').toLowerCase() === charityName
   );
 
+  const handleDonateClick = () => {
+    setShowDonationModal(true);
+  };
+
   // Render the content of the individual charity page
   return (
-    <div className="wallet-container">
+    <div className="individual-charity-container">
       <div className="sidebar">
         <NavigationSidebar />
       </div>
 
       <div className="individual-charity-content">
-          <Link to="/charities" className="back">
-            <img src="../../../BackButton.svg" alt="Back"></img>
-            <div className="text-decoration-none">Back</div>
-          </Link>
-          <h1>{charity.name}</h1>
-          <p>{charity.description}</p>
-          <Link to={charity.websiteUrl} target="_blank" rel="noopener noreferrer">
-            <p>Learn more</p>
-          </Link>
+        <Link to="/charities" className="back">
+          <img src="../../../BackButton.svg" alt="Back" />
+          <div className="text-decoration-none">Back</div>
+        </Link>
+        <h1>{charity.name}</h1>
+        <p>{charity.description}</p>
+        <Link to={charity.websiteUrl} target="_blank" rel="noopener noreferrer">
+          <p>Learn more</p>
+        </Link>
 
-          <SmallButton className="left-align-bttn" onClick="" text="Donate now"/>
+        <SmallButton className="left-align-bttn" onClick={handleDonateClick} text="Donate now" />
+
+        {/* Render the donation modal if showDonationModal is true */}
+        {showDonationModal && (
+          <DonationForm charity={charity} onClose={() => setShowDonationModal(false)} />
+        )}
       </div>
-
-
     </div>
-
-      // <div className="individual-charity-page">
-    //   <div className="charity-header">
-    //     <img src={charity.logoUrl} alt="Charity Logo" />
-    //     <h1>{charity.name}</h1>
-    //   </div>
-    //   <div className="charity-details">
-    //     <p>Description: {charity.description}</p>
-    //     <p>Location: {charity.location}</p>
-    //     <p>Tags: {charity.tags.join(', ')}</p>
-    //     <p>Website: <a href={charity.websiteUrl}>{charity.websiteUrl}</a></p>
-    //     {/* Add more details as needed */}
-    //   </div>
-    // </div>
   );
 };
-
-
 
 export default IndividualCharityPage;
