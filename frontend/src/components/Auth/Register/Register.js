@@ -65,6 +65,10 @@ function Register() {
   return (
     <div className="Register">
       <h2>Register</h2>
+      {/* Display error and success messages */}
+      {errorMessage && <div className="error-message">{errorMessage}</div>}
+      {successMessage && <div className="success-message">{successMessage}</div>}
+      
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="firstName">First Name:</label>

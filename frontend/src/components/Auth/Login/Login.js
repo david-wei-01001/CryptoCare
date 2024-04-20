@@ -6,7 +6,7 @@ import './Login.css';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');  // To handle and display errors
+  const [errorMessage, setErrorMessage] = useState('');  // To handle and display errors
   const [successMessage, setSuccessMessage] = useState(''); // State to store success message
 
 
@@ -18,8 +18,9 @@ function Login() {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       // User signed in successfully, 
       console.log('Error during user logging in:', userCredential.user);
-
-      setSuccessMessage('You have logged in successfully!'); // Update success message state to display to the user
+      let successMessage = 'You have logged in successfully!';
+      setSuccessMessage(successMessage); // Update success message state to display to the user
+      
       // TODO: Redirect the user or update the application state as needed
     } catch (error) {
       console.error('Login error:', error);
@@ -45,12 +46,16 @@ function Login() {
           errorMessage = 'An unexpected error occurred. Please try again.';
       }
 
-      setError(errorMessage); // Displaying a user-friendly error message
+      setErrorMessage(errorMessage); // Displaying a user-friendly error message
     }
   };
   console.log("hello")
   return (
     <div className="Login">
+      {/* Display error and success messages */}
+      {errorMessage && <div className="error-message">{errorMessage}</div>}
+      {successMessage && <div className="success-message">{successMessage}</div>}
+      
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="firstName">First Name:</label>
