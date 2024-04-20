@@ -16,30 +16,11 @@ function Login() {
     console.log('Email:', email);
     console.log('Password:', password);
   };
+
   console.log("hello")
   return (
     <div className="Login">
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="firstName">First Name:</label>
-          <input
-            type="text"
-            id="firstName"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="lastName">Last Name:</label>
-          <input
-            type="text"
-            id="lastName"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-            required
-          />
-        </div>
         <div>
           <label htmlFor="email">Email:</label>
           <input
