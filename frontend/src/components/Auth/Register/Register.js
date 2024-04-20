@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 // Import Firebase services
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth, firestore } from '../../firebase';
+import { auth, firestore } from '../../FireBase/firebase.js';
 import { doc, setDoc } from 'firebase/firestore';
 
 function Register() {
@@ -57,7 +57,6 @@ function Register() {
           errorMessage = 'An unexpected error occurred. Please try again.';
       }
       setErrorMessage(errorMessage); // Displaying a user-friendly error message
-      console.log(errorMessage);
     }
   };
 

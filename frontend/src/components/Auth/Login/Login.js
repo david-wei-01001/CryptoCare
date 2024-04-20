@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../firebase';
+import { auth } from '../../FireBase/firebase.js';
 import './Login.css';
 
 function Login() {
@@ -52,10 +52,8 @@ function Login() {
       }
 
       setErrorMessage(errorMessage); // Displaying a user-friendly error message
-      console.log(errorMessage);
     }
   };
-  console.log("hello")
   return (
     <div className="Login">
       {/* Display error and success messages */}
