@@ -39,6 +39,10 @@ const IndividualCharityPage = () => {
     setShowDonationModal(true);
   };
 
+  const handleCloseDonationModal = () => {
+    setShowDonationModal(false); // Set showDonationModal to false when donation modal needs to be closed
+  };
+
   // Render the content of the individual charity page
   return (
     <div className="individual-charity-container">
@@ -61,7 +65,7 @@ const IndividualCharityPage = () => {
 
         {/* Render the donation modal if showDonationModal is true */}
         {showDonationModal && (
-          <DonationForm charity={charity} onClose={() => setShowDonationModal(false)} />
+          <DonationForm charity={charity} onClose={handleCloseDonationModal} />
         )}
       </div>
     </div>

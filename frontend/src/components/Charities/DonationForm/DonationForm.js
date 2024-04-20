@@ -4,7 +4,7 @@ import axios from 'axios';
 import LargeButton from '../../Button/LargeButton.js';
 import './DonationForm.css';
 
-const DonationForm = ({ charity }) => {
+const DonationForm = ({ charity, onClose }) => {
   const [amount, setAmount] = useState('');
   const { charityName } = useParams();
 
@@ -21,9 +21,11 @@ const DonationForm = ({ charity }) => {
     }
   };
 
+
   return (
     <div className="overlay"> {/* Dark overlay */}
       <div className="donation-form"> {/* Donation form */}
+      <img src={`${process.env.PUBLIC_URL}/XButton.svg`} className="close-button" alt="Close" onClick={onClose} />
         <h2>Donate to {charity.name}</h2>
         <input
           type="number"

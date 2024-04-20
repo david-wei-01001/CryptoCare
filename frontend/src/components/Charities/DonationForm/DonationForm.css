@@ -38,6 +38,20 @@
   border-radius: 4px;
 }
 
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+}
+
 .donation-form button:hover {
   background-color: var(--primary-purple);
 }
+
+
