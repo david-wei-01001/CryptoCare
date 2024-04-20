@@ -22,13 +22,19 @@ p {
 
 /* Other styles for header and amount */
 .donation-header {
-  font-size: 20px;
+  font-size: 40px;
   color: #3A3A3A;
 }
-
-.donation-amount {
+.donation-a {
   font-size: 65px;
   color: #000000;
 }
 
+.donation-b {
+  font-size: 65px;
+  color: #000000;
+}
 
+.donation-amount span {
+  margin-right: 5px; /* Or any other value that looks good */
+}
