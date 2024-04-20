@@ -28,6 +28,3 @@ def transfer_eth(from_account, to_account, private_key, eth_amount):
 
     return tx_hash.hex()
     
-
-# print("Metamask Balance: ", get_metamask_balance('0xc94DEB32c46234b5fc313eD1D4C91c04d77C0218'))
-# print("Transaction Hash: ", transfer_eth('0xc94DEB32c46234b5fc313eD1D4C91c04d77C0218', '0xEFD1FB3DC9196B250E9CBD275D16D454da6F1FaA', 'b5c6ee6f06e81579c7bd284b58af664d01be5ad85b1c882de1b50a81718ebaeb', 0.001))
