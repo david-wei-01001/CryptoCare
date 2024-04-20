@@ -45,9 +45,11 @@ const NavigationSidebar = () => {
           <span className="navbar-text">APP NAME</span>
         </div>
 
-        <NavbarLinks page="Dashboard" img={`${process.env.PUBLIC_URL}/dashboardActive.svg`} />
-        <NavbarLinks page="Charities" img={`${process.env.PUBLIC_URL}/charitiesActive.svg`} />
-        <NavbarLinks page="Wallet" img={`${process.env.PUBLIC_URL}/walletActive.svg`} />
+        <NavbarLinks className="link-container" page="Dashboard" img={`${process.env.PUBLIC_URL}/dashboardInactive.svg`} activeImg={`${process.env.PUBLIC_URL}/dashboardActive.svg`} />
+
+        <NavbarLinks className="link-container" page="Charities" img={`${process.env.PUBLIC_URL}/charitiesInactive.svg`} activeImg={`${process.env.PUBLIC_URL}/charitiesActive.svg`} />
+
+        <NavbarLinks className="link-container" page="Wallet" img={`${process.env.PUBLIC_URL}/walletInactive.svg`} activeImg={`${process.env.PUBLIC_URL}/walletActive.svg`} />
 
         <div className="profile-info">
           <div className="navbar-link">
