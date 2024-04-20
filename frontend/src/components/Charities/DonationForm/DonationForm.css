@@ -9,6 +9,10 @@
   z-index: 999;
 }
 
+.login-container form {
+  background-color: inherit;
+}
+
 .donation-form {
   position: fixed;
   top: 50%;
