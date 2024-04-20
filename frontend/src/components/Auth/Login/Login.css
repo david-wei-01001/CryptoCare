@@ -1,11 +1,16 @@
 html, body {
     height: 100%;
+    min-height: 100vh; /* full viewport height */
     margin: 0;
 }
 
 .login-container {
     display: flex;
-    height: 100%;
+    min-height: 100vh; /* This ensures that your container is at least the height of the viewport */
+    align-items: center; /* This will vertically align the child elements in the center */
+    justify-content: flex-end; /* This will move your form to the right side */
+    background-color: white; /* Presuming you want a black background for the entire container */
+    color: white;
 }
 
 .left-section {
@@ -15,6 +20,7 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 28cm;
 }
 
 .right-section {
@@ -23,6 +29,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 28cm;
 }
 
 .logo img {
@@ -33,7 +40,7 @@ html, body {
 
 .logo h1 {
     margin-top: 10px;
-    font-size: 24px;
+    font-size: 80px;
     color: #333;
 }
 
@@ -71,11 +78,10 @@ html, body {
 
 .password-input {
     position: relative;
-    align-items: center; /* Center align content vertically */
 }
 
 .password-input input {
-    width: 40%;
+    width: 60%;
     padding: 10px;
     border: 1px solid grey; /* Border color */
     border-radius: 10px; /* Border radius to make it circular cornered */
@@ -85,18 +91,52 @@ html, body {
 
 .password-toggle {
     position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    cursor: pointer;
-    z-index: 1; /* Ensure eye icon is above input field */
+    top: 50%; /* Center vertically */
+    right: 10px; /* Distance from the right */
+    transform: translateY(-50%); /* Align center with the input field */
+    color: white; /* Icon color */
+    cursor: pointer; /* Change cursor to pointer to indicate clickable item */
 }
 
+/* The icon within the password toggle element */
 .password-toggle i {
-    color: grey;
+    font-size: 1em; /* Icon size */
 }
+
 
 .password-input input::placeholder {
     color: grey; /* Set placeholder text color to grey */
 }
+
+.input-container input {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid grey; /* Border color */
+    border-radius: 10px; /* Border radius to make it circular cornered */
+    background-color: black; /* Set background color to match the black container */
+    color: white; /* Set text color to white */
+}
+
+.input-container input::placeholder {
+    color: grey; /* Set placeholder text color to grey */
+}
   
+.login-button {
+    width: 65%;
+    padding: 10px;
+    border: none;
+    background-color: #7D3C98; /* Purple background */
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup-text {
+    color: #fff;
+    margin-top: 20px;
+}
+
+.signup-text a {
+    color: #9B59B6; /* Light purple for links */
+    text-decoration: none;
+}
