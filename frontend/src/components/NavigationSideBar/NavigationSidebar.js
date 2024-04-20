@@ -1,8 +1,11 @@
 import React from 'react';
 import './NavigationSidebar.css';
 import NavbarLinks from './NavbarLinks';
+import { useUser } from '../contexts/UserContext.js';
 
 const NavigationSidebar = () => {
+  const user = useUser();  // Access user data from the context
+
   return (
     <div className="sidebar">
        <div className="nav-links">
@@ -18,7 +21,8 @@ const NavigationSidebar = () => {
         <div className="profile-info">
           <div className="navbar-link">
             <img src={`${process.env.PUBLIC_URL}/profileLogo.svg`}  alt="Logo" className="navbar-logo" />
-            <span className="navbar-text">Stephen Flores</span>
+            {/* Dynamically display the user's first and last name or a placeholder if not available */}
+            <span className="navbar-text">{user ? `${user.firstName} ${user.lastName}` : 'Loading...'}</span>
           </div>
         </div>
       </div>

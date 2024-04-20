@@ -5,10 +5,12 @@ import NavigationSidebar from '../NavigationSideBar/NavigationSidebar';
 import Donations from './Donations/Donations';
 import FeaturedCharities from './FeaturedCharities/FeaturedCharities';
 import DonationHistory from './DonationHistory/DonationHistory';
-import SmallStrokedButton from '../Button/SmallStrokedButton'
+import SmallStrokedButton from '../Button/SmallStrokedButton';
+import { useUser } from '../contexts/UserContext.js';
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const user = useUser();  // Get user data from context
 
   const handleViewAllClick = () => {
     navigate('/charities');
@@ -22,7 +24,7 @@ const Dashboard = () => {
       <div className="dashboard-content">
         <div className="top-section">
           <div className="donations-card">
-            <h1 className="header">Welcome, Stephan</h1>
+            <h1 className="header">Welcome, {user ? `${user.firstName}` : 'User'}</h1>
             <Donations />
           </div>
 
