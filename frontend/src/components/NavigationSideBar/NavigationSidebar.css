@@ -54,6 +54,21 @@
   text-decoration: none;
 }
 
+.navbar-l {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 180px;
+  padding: 20px;
+  margin-bottom: 0px;
+  text-decoration: none;
+}
+
+.profile-info span.navbar-text {
+  width: 300px;
+  text-align: left;
+}
+
 /* Link styling */
 a.navbar-link {
   max-width: 170px;
@@ -73,4 +88,23 @@ a.navbar-link {
 
 .navbar-link span {
   color: #ADADAD;
+}
+
+.navbar-l span {
+  color: #ADADAD;
+}
+
+.sign-out-button {
+  background-color: #f44336; /* Red color for emphasis */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.sign-out-button:hover {
+  background-color: #d32f2f; /* Darker shade on hover */
 }

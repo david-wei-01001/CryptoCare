@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Donations.css';
 import SmallButton from '../../Button/SmallButton'
 import { useUser } from '../../contexts/UserContext.js';
@@ -8,8 +9,13 @@ import { doc, getDoc } from 'firebase/firestore';
 
 const Donations = () => {
   const user = useUser();  // Get user data from context
+  const navigate = useNavigate();
   const [totalBitcoin, setTotalBitcoin] = useState(0);
   const [totalETH, setTotalETH] = useState(0);
+
+  const handleNavigate = () => {
+    navigate('/charities'); // Navigate to the charity page route
+  };
 
   // Retrieve total Donation
   useEffect(() => {
@@ -49,7 +55,7 @@ const Donations = () => {
         <span className="donation-b">
           Ξ{totalETH.toFixed(2)}
         </span>
-        <SmallButton onClick="" text="Donations"/>
+        <SmallButton onClick={handleNavigate} text="Donate"/>
       </div>
     </div>
   );
