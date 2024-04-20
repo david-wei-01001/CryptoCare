@@ -10,7 +10,6 @@ const CharityCard = ({ charity }) => {
         </div>
         <div className="charity-info">
           <h2 className="charity-name">{charity.name}</h2>
-          {/* <a href={charity.profileUrl} className="charity-link">Learn More</a> */}
         </div>
       </div>
     </div>

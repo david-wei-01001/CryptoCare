@@ -1,0 +1,58 @@
+
+.charity-card {
+  height: 150px;
+  width: 220px;
+  box-shadow: 0px 4px 6px 1px rgba(0, 0, 0, 0.1);
+}
+
+.charities-container .charity-info {
+  margin-top: 0;
+}
+
+/* Charities Container */
+.charities-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+/* Charities Content */
+.charities-content {
+  padding: 1% 4%;
+  text-align: left;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+/* Header */
+.charities-content h1 {
+  width: 100%;
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+/* Featured Charities Container (Grid Layout) */
+.featured-charities-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(272px, 0fr));
+  gap: 1px;
+}
+
+.pagination-button {
+  cursor: pointer;
+}
+
+.prev-next-container {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 20px;
+  right: 0;
+  transform: translateX(-50%);
+  width: 130px;
+  z-index: 999;
+  padding: 0;
+}
