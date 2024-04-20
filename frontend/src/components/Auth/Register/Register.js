@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import LargeButton from '../../Button/LargeButton';
+import './Register.css';
 
 // Import Firebase services
 import { createUserWithEmailAndPassword } from 'firebase/auth';
@@ -11,7 +13,10 @@ function Register() {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [firstNameError, setFirstNameError] = useState('');
+  const [lastNameError, setLastNameError] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
 
   const navigate = useNavigate();
@@ -42,75 +47,89 @@ function Register() {
     } catch (error) {
       console.error("Error registering user:", error.message);
 
-      let errorMessage = '';
+      // Clear existing error messages
+      setFirstNameError('');
+      setLastNameError('');
+      setEmailError('');
+      setPasswordError('');
+
+      // let errorMessage = '';
       switch (error.code) {
         case 'auth/email-already-in-use':
-          errorMessage = 'This email address is already in use by another account.';
+          setEmailError('This email address is already in use by another account.');
           break;
         case 'auth/invalid-email':
-          errorMessage = 'The email address is invalid.';
+          setEmailError('The email address is invalid.');
           break;
         case 'auth/operation-not-allowed':
-          errorMessage = 'Email/password accounts are not enabled. Contact support.';
+          setEmailError('Email/password accounts are not enabled. Contact support.');
           break;
         case 'auth/weak-password':
-          errorMessage = 'The password is too weak. Please use a stronger password.';
+          setPasswordError('The password is too weak. Please use a stronger password.');
           break;
         default:
-          errorMessage = 'An unexpected error occurred. Please try again.';
+          setFirstNameError('An unexpected error occurred. Please try again.');
       }
-      setErrorMessage(errorMessage); // Displaying a user-friendly error message
     }
   };
 
   return (
     <div className="Register">
       {/* Display error and success messages */}
-      {errorMessage && <div className="error-message">{errorMessage}</div>}
       {successMessage && <div className="success-message">{successMessage}</div>}
-      
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="firstName">First Name:</label>
+
+      <form onSubmit={handleSubmit} className="form">
+        <div className="header-section">
+          <h1 className="weight-500">Welcome</h1>
+          <p className="med-gray-text">To get started, create an account.</p>
+        </div>
+
+        <div className="input-section">
+          <div className="error-message" style={{ visibility: firstNameError ? 'visible' : 'hidden' }}>{firstNameError}</div>
           <input
             type="text"
             id="firstName"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
+            placeholder="First Name"
             required
           />
         </div>
-        <div>
-          <label htmlFor="lastName">Last Name:</label>
+        <div className="input-section">
+          <div className="error-message" style={{ visibility: lastNameError ? 'visible' : 'hidden' }}>{lastNameError}</div>
           <input
             type="text"
             id="lastName"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
+            placeholder="Last Name"
             required
           />
         </div>
-        <div>
-          <label htmlFor="email">Email:</label>
+        <div className="input-section">
+          <div className="error-message" style={{ visibility: emailError ? 'visible' : 'hidden' }}>{emailError}</div>
           <input
             type="email"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
             required
           />
         </div>
-        <div>
-          <label htmlFor="password">password:</label>
+        <div className="input-section">
+          <div className="error-message" style={{ visibility: passwordError ? 'visible' : 'hidden' }}>{passwordError}</div>
           <input
             type="password"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
             required
           />
         </div>
-        <button type="submit">Register</button>
+
+        <LargeButton onClick={handleSubmit} text="Register" className="register-bttn" />
       </form>
     </div>
   );

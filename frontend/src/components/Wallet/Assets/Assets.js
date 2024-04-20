@@ -5,14 +5,14 @@ const dummyAssetData = [
   {
     "name": "Bitcoin",
     "symbol": "BTC",
-    "img": './bitcoin.svg' ,
+    "img": `${process.env.PUBLIC_URL}/bitcoin.svg` ,
     "amount": 0.020,
     "usdValue": 1203.23
   },
   {
     "name": "Bitcoin",
     "symbol": "BTC",
-    "img": './bitcoin.svg' ,
+    "img": `${process.env.PUBLIC_URL}/bitcoin.svg` ,
     "amount": 0.020,
     "usdValue": 1203.23
   }

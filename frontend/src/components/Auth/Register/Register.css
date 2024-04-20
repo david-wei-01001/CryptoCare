@@ -1,0 +1,79 @@
+.Register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--off-black);
+}
+
+.header-section {
+  padding: 20px 0;
+}
+
+.header-section h1 {
+  margin-bottom: 15px;
+}
+
+.error-message, .success-message {
+  color: red;
+  font-size: 14px;
+  visibility: hidden;
+}
+
+/* Style the form */
+form {
+  background-color: white;
+  height: 80%;
+  width: 80%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Style form inputs and labels */
+form > div {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+.Register .large-button {
+  width: 80%;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  padding: 15px;
+  border: 2px solid #51525A;
+  box-sizing: border-box;
+  border-radius: 15px;
+  font-size: 16px;
+}
+
+.error-message {
+  position: absolute;
+  bottom: 55px;
+  left: 60px;
+  visibility: hidden;
+}
+
+.form .input-section  {
+  margin-bottom:28px;
+}
+
+.Register .large-button {
+  margin-top: 40px;
+}
+
+.Register .large-button:hover {
+  background-color: var(--primary-purple);
+}
+
