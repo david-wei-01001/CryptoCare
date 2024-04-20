@@ -1,24 +1,74 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+
+// Import Firebase services
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getFirestore, doc, setDoc } from 'firebase/firestore';
 
 function Register() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
-  const handleSubmit = (e) => {
+  const history = useHistory();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Implement registration logic here
-    console.log('First Name:', firstName);
-    console.log('Last Name:', lastName);
-    console.log('Email:', email);
-    console.log('Password:', password);
+    
+    const auth = getAuth();
+    const firestore = getFirestore();
+
+    try {
+      // Use Firebase Auth to create a new user with email and password
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      // Add first and last name to Firestore under 'users' collection
+      await setDoc(doc(firestore, "users", user.uid), {
+        firstName: firstName,
+        lastName: lastName,
+        email: email
+      });
+
+      setSuccessMessage('Registration successful! Redirecting to login...');
+      setTimeout(() => {
+        history.push('/login'); // Redirect to login page after message display
+      }, 2000); // Redirect after 2 seconds
+
+    } catch (error) {
+      console.error("Error registering user:", error.message);
+
+      let errorMessage = '';
+      switch (error.code) {
+        case 'auth/email-already-in-use':
+          errorMessage = 'This email address is already in use by another account.';
+          break;
+        case 'auth/invalid-email':
+          errorMessage = 'The email address is invalid.';
+          break;
+        case 'auth/operation-not-allowed':
+          errorMessage = 'Email/password accounts are not enabled. Contact support.';
+          break;
+        case 'auth/weak-password':
+          errorMessage = 'The password is too weak. Please use a stronger password.';
+          break;
+        default:
+          errorMessage = 'An unexpected error occurred. Please try again.';
+      }
+      setErrorMessage(errorMessage); // Displaying a user-friendly error message
+    }
   };
 
   return (
     <div className="Register">
       <h2>Register</h2>
+      {/* Display error and success messages */}
+      {errorMessage && <div className="error-message">{errorMessage}</div>}
+      {successMessage && <div className="success-message">{successMessage}</div>}
+      
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="firstName">First Name:</label>
