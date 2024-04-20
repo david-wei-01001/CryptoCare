@@ -1,0 +1,142 @@
+html, body {
+    height: 100%;
+    min-height: 100vh; /* full viewport height */
+    margin: 0;
+}
+
+.login-container {
+    display: flex;
+    min-height: 100vh; /* This ensures that your container is at least the height of the viewport */
+    align-items: center; /* This will vertically align the child elements in the center */
+    justify-content: flex-end; /* This will move your form to the right side */
+    background-color: white; /* Presuming you want a black background for the entire container */
+    color: white;
+}
+
+.left-section {
+    flex: 1.5;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 28cm;
+}
+
+.right-section {
+    flex: 1;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 28cm;
+}
+
+.logo img {
+    width: 80%;
+    max-width: 300px; /* Set a maximum width to ensure it doesn't exceed a certain size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.logo h1 {
+    margin-top: 10px;
+    font-size: 80px;
+    color: #333;
+}
+
+.form-container {
+    width: 80%;
+    padding: 20px;
+    background-color: black;
+    border-radius: 8px;
+}
+
+.form-header {
+    text-align: center;
+}
+
+.form-body {
+    margin-top: 20px;
+}
+
+.form-body p {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.form-body p a {
+    color: blue;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}   
+
+.input-container label {
+    color: grey;
+}
+
+.password-input {
+    position: relative;
+}
+
+.password-input input {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid grey; /* Border color */
+    border-radius: 10px; /* Border radius to make it circular cornered */
+    background-color: black; /* Set background color to match the black container */
+    color: white; /* Set text color to white */
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    right: 10px; /* Distance from the right */
+    transform: translateY(-50%); /* Align center with the input field */
+    color: white; /* Icon color */
+    cursor: pointer; /* Change cursor to pointer to indicate clickable item */
+}
+
+/* The icon within the password toggle element */
+.password-toggle i {
+    font-size: 1em; /* Icon size */
+}
+
+
+.password-input input::placeholder {
+    color: grey; /* Set placeholder text color to grey */
+}
+
+.input-container input {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid grey; /* Border color */
+    border-radius: 10px; /* Border radius to make it circular cornered */
+    background-color: black; /* Set background color to match the black container */
+    color: white; /* Set text color to white */
+}
+
+.input-container input::placeholder {
+    color: grey; /* Set placeholder text color to grey */
+}
+  
+.login-button {
+    width: 65%;
+    padding: 10px;
+    border: none;
+    background-color: #7D3C98; /* Purple background */
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup-text {
+    color: #fff;
+    margin-top: 20px;
+}
+
+.signup-text a {
+    color: #9B59B6; /* Light purple for links */
+    text-decoration: none;
+}
