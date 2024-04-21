@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Donations.css';
-import SmallButton from '../../Button/SmallButton'
+import LargeButton from '../../Button/LargeButton'
 import { useUser } from '../../contexts/UserContext.js';
 import { firestore } from '../../FireBase/firebase.js';
 import { doc, getDoc } from 'firebase/firestore';
@@ -47,17 +47,33 @@ const Donations = () => {
 
   return (
     <div className="donations-container">
-      <div className="dontations-wrapper">
-        <p className="donation-header">Total donations</p>
-        <span className="donation-a">
-          ₿{totalBitcoin.toFixed(2)}
-        </span>
-        <span className="donation-b">
-          Ξ{totalETH.toFixed(2)}
-        </span>
-        <SmallButton onClick={handleNavigate} text="Donate"/>
+  <div className="donations-wrapper">
+    <p className="donation-header">Total Donations</p>
+    <div className="donation-details">
+      <div className="donation-amount">
+        <span className="currency-symbol">₿</span>
+        <span className="amount">{totalBitcoin.toFixed(2)}</span>
+      </div>
+      <div className="donation-amount">
+        <span className="currency-symbol">Ξ</span>
+        <span className="amount">{totalETH.toFixed(2)}</span>
       </div>
     </div>
+    <LargeButton onClick={handleNavigate} text="Make a Donation" />
+  </div>
+</div>
+    // <div className="donations-container">
+    //   <div className="dontations-wrapper">
+    //     <p className="donation-header">Total donations</p>
+    //     <span className="donation-a">
+    //     ₿ {totalBitcoin.toFixed(2)}
+    //     </span>
+    //     <span className="donation-b">
+    //       Ξ {totalETH.toFixed(2)}
+    //     </span>
+    //     <LargeButton onClick={handleNavigate} text="Make a Donation"/>
+    //   </div>
+    // </div>
   );
 };
 
