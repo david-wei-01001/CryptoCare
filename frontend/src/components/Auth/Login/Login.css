@@ -1,46 +1,40 @@
-html, body {
-    height: 100%;
-    min-height: 100vh; /* full viewport height */
-    margin: 0;
-}
-
 .login-container {
     display: flex;
-    min-height: 100vh; /* This ensures that your container is at least the height of the viewport */
-    align-items: center; /* This will vertically align the child elements in the center */
-    justify-content: flex-end; /* This will move your form to the right side */
-    background-color: white; /* Presuming you want a black background for the entire container */
+    min-height: 100vh;
+    align-items: center;
+    background-color: white;
     color: white;
+    height: 100%;
 }
 
 .left-section {
     flex: 1.5;
     background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 28cm;
+    height: 100%;
+}
+
+.logo h1 {
+    padding-top: 50px;
+    margin-bottom: 20px;
 }
 
 .right-section {
     flex: 1;
     background-color: black;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 28cm;
+    height: 100vh;
 }
 
 .logo img {
-    width: 80%;
-    max-width: 300px; /* Set a maximum width to ensure it doesn't exceed a certain size */
-    height: auto; /* Maintain aspect ratio */
+    width: 70%;
+    margin-right: 50px;
+    height: auto;
 }
 
 .logo h1 {
-    margin-top: 10px;
-    font-size: 80px;
+    margin-top: 20px;
+    font-size: 60px;
     color: #333;
 }
 
@@ -49,6 +43,26 @@ html, body {
     padding: 20px;
     background-color: black;
     border-radius: 8px;
+}
+
+.login-container .large-button  {
+    background-color: var(--primary-purple);
+    width: 80%;
+}
+.form-body, .form-body form {
+    width: 100%;
+    padding: 10px 0;
+}
+.input-container {
+    width: 100%;
+    margin: 0;
+}
+.form-container {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .form-header {
@@ -70,7 +84,7 @@ html, body {
 
 .input-container {
     margin-bottom: 20px;
-}   
+}
 
 .input-container label {
     color: grey;
@@ -120,7 +134,7 @@ html, body {
 .input-container input::placeholder {
     color: grey; /* Set placeholder text color to grey */
 }
-  
+
 .login-button {
     width: 65%;
     padding: 10px;

@@ -19,6 +19,9 @@
 .left-aligned-flex {
   text-align: left;
 }
+.assets .left-aligned-flex.right-align {
+  text-align: right;
+}
 
 .left-aligned-flex * {
     margin: 8px 0;
@@ -33,5 +36,5 @@
 }
 
 .asset-img {
-  width: 110px;
+  width: 100px;
 }

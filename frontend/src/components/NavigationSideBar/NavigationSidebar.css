@@ -54,6 +54,21 @@
   text-decoration: none;
 }
 
+.navbar-l {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 180px;
+  padding: 20px;
+  margin-bottom: 0px;
+  text-decoration: none;
+}
+
+.profile-info span.navbar-text {
+  width: 300px;
+  text-align: left;
+}
+
 /* Link styling */
 a.navbar-link {
   max-width: 170px;
@@ -73,4 +88,34 @@ a.navbar-link {
 
 .navbar-link span {
   color: #ADADAD;
+}
+
+.navbar-l span {
+  color: #ADADAD;
+}
+div.sign-out-container {
+  width: 100%;
+  text-align: left;
+  padding-top: 0 !important;
+}
+
+.sign-out-button {
+  background-color: inherit;
+  font-weight: 500;
+  border: solid #bb1d11;
+  color: #bb1d11;
+  padding: 0 20px;
+  margin-left: 25px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 50px;
+  width: 60%;
+  height: 50px;
+}
+
+.sign-out-button:hover {
+  background-color: #d32f2f;
+  color: white;
 }

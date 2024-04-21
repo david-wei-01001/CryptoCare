@@ -1,7 +1,3 @@
-p {
-  margin: 0;
-}
-
 .donations-container {
   background-color: #FBFD9C;
   border-radius: 25px;
@@ -10,25 +6,49 @@ p {
   justify-content: center;
   align-items: center;
   height: 100%;
+  width: 100%;
   box-shadow: 0px 4px 6px 1px rgba(0, 0, 0, 0.1);
 }
 
-.dontations-wrapper {
+.donations-wrapper {
+  width: 50%;
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 7px;
 }
 
 /* Other styles for header and amount */
 .donation-header {
-  font-size: 20px;
   color: #3A3A3A;
+  font-size: 24px;
+  margin-bottom: 25px;
 }
 
-.donation-amount {
-  font-size: 65px;
+.donation-a, .donation-b {
+  font-size: 40px;
   color: #000000;
 }
 
+.donation-amount span {
+  margin-right: 5px; /* Or any other value that looks good */
+}
 
+.donation-details {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+
+.donation-amount {
+  display: flex;
+  align-items: center;
+}
+
+.currency-symbol {
+  font-size: 35px;
+  margin-right: 8px;
+}
+
+.amount {
+  font-size: 25px;
+}

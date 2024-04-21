@@ -2,6 +2,7 @@
   background-color: var(--light-blue-background);
   height: 100%;
   border-radius: 20px;
+  padding: 25px;
 }
 
 .link-wallet-card-container p {
@@ -25,7 +26,6 @@
   flex-direction: column;
   gap: 25px;
 }
-
 
 input {
   padding: 15px;
