@@ -69,7 +69,7 @@ function Login() {
     <div className="login-container">
       <div className="left-section">
         <div className="logo">
-          <h1>Charity Bitcoin App</h1>
+          <h1>Crypto Care</h1>
           <img src={`${process.env.PUBLIC_URL}/login-main.png`} />
         </div>
       </div>
