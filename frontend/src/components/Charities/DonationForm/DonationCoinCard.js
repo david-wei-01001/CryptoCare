@@ -3,7 +3,7 @@ import './DonationForm.css';
 import { useUser } from '../../contexts/UserContext.js';
 import { firestore } from '../../FireBase/firebase.js';
 import { doc, getDoc } from 'firebase/firestore';
-import Web3 from 'web3';
+import { getBitcoinBalance, getMetamaskBalance } from "../../Wallet/WalletCard/WalletCard.js";
 
 const DonationCoinCard = ({ coin, onDonationAmountChange }) => {
   const [availableAmount, setAvailableAmount] = useState('0.00');
@@ -27,41 +27,26 @@ const DonationCoinCard = ({ coin, onDonationAmountChange }) => {
           // Check if the wallet address for the specified coin is an empty string
           if (address) {
             // Retrieve the balance for Bitcoin
-            if (coin === 'bitcoin') {
-              fetch(`https://api.blockcypher.com/v1/btc/main/addrs/${address}/balance`)
-              .then(response => {
-                if (!response.ok) {
-                    // If response status is not ok, parse and throw the error from the response body
-                    return response.json().then(errData => {
-                        throw new Error(errData.error || 'Unknown error occurred');
-                    });
-                }
-                return response.json();
-                })
-                .then(data => {
-                  // Convert from satoshis to BTC for display
-                  setAvailableAmount(data.balance.toString());
-                })
-                .catch(error => {
-                  console.error('Error fetching Bitcoin balance:', error);
-                  setAvailableAmount('0.00');
-                });
+            if (coin === 'bitcoin' && walletAddresses.bitcoin !== "") {
+              try {
+                const bitcoinBalance = await getBitcoinBalance(walletAddresses.bitcoin);
+                setAvailableAmount(bitcoinBalance.toString());
+              } catch (error) {
+                console.error('Error fetching Bitcoin balance:', error);
+                // Handle any errors, for example by setting the balance to 0 or an error message
+                setAvailableAmount('0.00');
+              }
             }
             // Retrieve the balance for Ethereum
-            else if (coin === 'ethereum') {
-              fetch(`https://api.etherscan.io/api?module=account&action=balance&address=${address}&tag=latest&apikey=${apikey}`)
-                .then(response => response.json())
-                .then(data => {
-                  if (!data.result || data.status !== "1") { // Check for success status or existence of result
-                    throw new Error(data.message || 'Unknown error occurred');
-                  }
-                  const balanceInEther = Web3.utils.fromWei(data.result, 'ether');
-                  setAvailableAmount(data.result.toString());
-                })
-                .catch(error => {
-                  console.error('Error fetching Ethereum balance:', error);
-                  setAvailableAmount('0.00');
-                });
+            else if (coin === 'ethereum' && walletAddresses.ethereum !== "") {
+              try {
+                const ethereumBalance = await getMetamaskBalance(walletAddresses.ethereum);
+                setAvailableAmount(ethereumBalance.toString());
+              } catch (error) {
+                console.error('Error fetching Bitcoin balance:', error);
+                // Handle any errors, for example by setting the balance to 0 or an error message
+                setAvailableAmount('0.00');
+              }
             }
           } else {
             console.log("No such wallet!");
