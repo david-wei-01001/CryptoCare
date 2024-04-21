@@ -3,9 +3,7 @@ import './Assets.css';
 import { firestore } from '../../FireBase/firebase.js';
 import { doc, getDoc } from 'firebase/firestore';
 import { useUser } from '../../contexts/UserContext.js';
-import Web3 from 'web3';
 import { getBitcoinBalance, getMetamaskBalance } from "../WalletCard/WalletCard.js";
-import WalletCard from '../WalletCard/WalletCard.js';
 
 
 const Assets = () => {
@@ -35,7 +33,6 @@ const Assets = () => {
       const fetchWalletData = async () => {
         const userRef = doc(firestore, "users", user.uid);
         const docSnap = await getDoc(userRef);
-        const web3 = new Web3(new Web3.providers.HttpProvider('https://sepolia.infura.io/v3/YOUR_INFURA_PROJECT_ID'));
 
         if (docSnap.exists()) {
           const userData = docSnap.data();
