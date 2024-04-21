@@ -22,6 +22,7 @@ CryptoCare is transforming the world of philanthropy by harnessing the power of 
 - [Run](#Steps-to-run)
 - [Structure](#Directory-Tree)
 - [License](#License)
+- [Credits](#Credits)
 
 ## Inspiration
 
@@ -225,4 +226,4 @@ This project exists thanks to all the people who contribute.
   </a>
 </p>
 
-Thanks for 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
