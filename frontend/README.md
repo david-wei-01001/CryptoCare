@@ -82,6 +82,15 @@ npm install @fortawesome/free-solid-svg-icons
 `npm install -g serve`
 `npm install firebase`
 
+
+Go to the Etherscan website.
+If you don't already have an account, you will need to sign up. Click on the "Sign Up" button and follow the registration process.
+After registering, log in to your Etherscan account.
+Navigate to the API-KEYs section in your account dashboard.
+Click on the "Add" button to create a new API key.
+You may be required to provide a name or label for your API key. This can be anything that helps you identify the purpose of the key.
+Once you've added the key, it will be listed on your API-KEYs page. You can then copy the API key and use it in your application.
+
 `npm run build`
 `serve -s build`
 
