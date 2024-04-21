@@ -4,6 +4,12 @@
 
 CryptoCare is transforming the world of philanthropy by harnessing the power of blockchain technology. Our platform leverages Bitcoin and Ethereum to create a transparent, efficient, and decentralized donation system that minimizes administrative costs and eliminates the need for intermediaries.
 
+<p float="left">
+  <img src="./assets/1.web" width="48%" />
+  <img src="./assets/2.web" width="48%" /> 
+  <img src="./assets/3.web" width="48%" /> 
+</p>
+
 ## Key Features of CryptoCare:
 
 Decentralized Donations: Directly connect with causes you care about. Your contributions go straight to the beneficiaries without any delays or unnecessary expenses.
@@ -11,7 +17,9 @@ Immutable Ledger: Every transaction is securely recorded on a public blockchain,
 Anonymity and Security: Donate anonymously using pseudonymous addresses. At CryptoCare, we prioritize your privacy, allowing you to support your favorite causes without disclosing your identity.
 User-Friendly Experience: With support for major cryptocurrencies like Bitcoin and Ethereum, our platform is designed for simplicity and ease of use, featuring low fees and instant transactions to facilitate your charitable activities.
 
-[![Watch the video](./assets/4.webp)](https://www.youtube.com/watch?v=Mtdf4hMzg2s "Watch the video")
+<a href="https://www.youtube.com/watch?v=Mtdf4hMzg2s" title="Watch the video">
+  <img src="./assets/4.webp" width="200" alt="Watch the video"/>
+</a>
 
 
 #CryptoCare #BlockchainCharity #TransparentDonations #DecentralizedGiving #Bitcoin #Ethereum
