@@ -10,11 +10,12 @@ CryptoCare is transforming the world of philanthropy by harnessing the power of 
 </p>
 
 ## Table of Contents
-- [Features](#Key Features of CryptoCare)
+- [Features](#Key-Features-of-CryptoCare)
 - [Youtube](#Youtube)
 - [Devpost](#Devpost)
-- [Contributing](#contributing)
-- [License](#license)
+- [Firebase](#Firebase)
+- [Run](#Steps-to-run)
+- [Structure](#Directory-Tree)
 
 ## Key Features of CryptoCare
 
