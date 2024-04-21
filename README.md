@@ -210,22 +210,11 @@ This project is open-sourced under the MIT License. For more details, see the [L
 ## Credits
 ## Credits
 
-This project exists thanks to all the people who contribute.
+A heartfelt thank you to everyone who has contributed to this project:
 
-<!-- Contributor Avatars -->
-<p align="center">
-  <!-- Each <a> tag below represents a link to a contributor's GitHub profile -->
-  <a href="https://github.com/david-wei-01001" style="text-decoration: none;">
-    <img src="https://github.com/david-wei-01001.png?size=100" style="border-radius: 50%;" alt="Jiankun Wei" />
-  </a>
-  <a href="https://github.com/sejungk" style="text-decoration: none;">
-    <img src="https://github.com/sejungk.png?size=100" style="border-radius: 50%;" alt="Sejung Kim" />
-  </a>
-  <a href="https://github.com/theBatman07" style="text-decoration: none;">
-    <img src="https://avatars.githubusercontent.com/u/85270515?v=4" style="border-radius: 50%;" alt="Gaurav Khater" />
-  </a>
-  
-</p>
+- [Jiankun Wei](https://github.com/david-wei-01001) - Database Lead
+- [Sejung Kim](https://github.com/sejungk) - UX/UI Design Lead
+- [Gaurav Khater](https://github.com/theBatman07) - Crypto Lead
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
