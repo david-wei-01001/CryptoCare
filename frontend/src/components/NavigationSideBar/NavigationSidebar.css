@@ -93,18 +93,29 @@ a.navbar-link {
 .navbar-l span {
   color: #ADADAD;
 }
+div.sign-out-container {
+  width: 100%;
+  text-align: left;
+  padding-top: 0 !important;
+}
 
 .sign-out-button {
-  background-color: #f44336; /* Red color for emphasis */
-  color: white;
-  border: none;
-  padding: 10px 20px;
+  background-color: inherit;
+  font-weight: 500;
+  border: solid #bb1d11;
+  color: #bb1d11;
+  padding: 0 20px;
+  margin-left: 25px;
   margin-bottom: 30px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  border-radius: 50px;
+  width: 60%;
+  height: 50px;
 }
 
 .sign-out-button:hover {
-  background-color: #d32f2f; /* Darker shade on hover */
+  background-color: #d32f2f;
+  color: white;
 }

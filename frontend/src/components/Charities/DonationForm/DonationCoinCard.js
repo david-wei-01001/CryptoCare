@@ -9,6 +9,8 @@ const DonationCoinCard = ({ coin, onDonationAmountChange }) => {
   const [donationAmount, setDonationAmount] = useState('');
   const user = useUser(); // Get user data from context
 
+  const apikey = "KRVSXGU4WGUYZPXJVHQX1EF9J81G9QFNSF";
+
   useEffect(() => {
     // Fetch the user's wallet address for the specified coin
     const fetchWalletAddress = async () => {
@@ -26,7 +28,15 @@ const DonationCoinCard = ({ coin, onDonationAmountChange }) => {
             // Retrieve the balance for Bitcoin
             if (coin === 'bitcoin') {
               fetch(`https://api.blockcypher.com/v1/btc/main/addrs/${address}/balance`)
-                .then(response => response.json())
+              .then(response => {
+                if (!response.ok) {
+                    // If response status is not ok, parse and throw the error from the response body
+                    return response.json().then(errData => {
+                        throw new Error(errData.error || 'Unknown error occurred');
+                    });
+                }
+                return response.json();
+                })
                 .then(data => {
                   // Convert from satoshis to BTC for display
                   setAvailableAmount(data.balance.toString());
@@ -38,9 +48,12 @@ const DonationCoinCard = ({ coin, onDonationAmountChange }) => {
             }
             // Retrieve the balance for Ethereum
             else if (coin === 'ethereum') {
-              fetch(`https://api.etherscan.io/api?module=account&action=balance&address=${address}&tag=latest&apikey=YourApiKeyToken`)
-                .then(response => response.json())
+              fetch(`https://api.etherscan.io/api?module=account&action=balance&address=${address}&tag=latest&apikey=${apikey}`)
+              .then(response => response.json())
                 .then(data => {
+                  if (!data.result || data.status !== "1") { // Check for success status or existence of result
+                    throw new Error(data.message || 'Unknown error occurred');
+                  }
                   setAvailableAmount(data.result.toString());
                 })
                 .catch(error => {

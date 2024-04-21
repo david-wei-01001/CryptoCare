@@ -6,6 +6,9 @@ import axios from 'axios';
 import LargeButton from '../../Button/LargeButton.js';
 import DonationCoinCard from './DonationCoinCard.js';
 import './DonationForm.css';
+import Web3 from 'web3';
+
+const web = new Web3('https://sepolia.infura.io/v3/f4f2f5cf43244fdf95f6bf89da328fbb');
 
 const DonationForm = ({ charity, onClose }) => {
   const [bitcoinAmount, setBitcoinAmount] = useState('');
@@ -26,6 +29,28 @@ const DonationForm = ({ charity, onClose }) => {
     const key = e.target.value;
     setEthereumPrivateKey(key);
   };
+
+  const bitcoin_lightning = async () => {
+      const headers = {
+        "Grpc-Metadata-Macaroon": '0201036c6e6402f801030a105547e6aef8d75ed6bad06b59a99d5d731201301a160a0761646472657373120472656164120577726974651a130a04696e666f120472656164120577726974651a170a08696e766f69636573120472656164120577726974651a210a086d616361726f6f6e120867656e6572617465120472656164120577726974651a160a076d657373616765120472656164120577726974651a170a086f6666636861696e120472656164120577726974651a160a076f6e636861696e120472656164120577726974651a140a057065657273120472656164120577726974651a180a067369676e6572120867656e657261746512047265616400000620dbb354ad9f8a2bffcf835c5218989f1638435cf571df470c347674d1366627ca',
+        "Accept": "application/json",
+    };
+
+    const url = "https://charity.u.voltageapp.io:8080/v1/invoices";
+    const payload = {
+        value: 1000,
+        memo: "for charity"
+    };
+
+    try {
+        const response = await axios.post(url, payload, { headers });
+        // return response.data;
+        console.log(response)
+    } catch (error) {
+        console.error("Error creating invoice:", error);
+        throw error;
+    }
+  }
 
   const handleDonation = async () => {
     const donationData = [];
@@ -49,9 +74,30 @@ const DonationForm = ({ charity, onClose }) => {
       };
       donationData.push(ethereumDonation);
     }
-    console.log(donationData);
+    // console.log(donationData);
 
-    // TODO: store in the database
+    // Get Bitcoin private key
+    // const bitcoinPrivateKey = document.getElementById('bitcoin').value;
+    
+    // Get Ethereum private key
+    // const ethereumPrivateKey = document.getElementById('ethereum').value;
+    const address1 = web.utils.toChecksumAddress('0xc94DEB32c46234b5fc313eD1D4C91c04d77C0218');
+    const address2 = web.utils.toChecksumAddress('0xEFD1FB3DC9196B250E9CBD275D16D454da6F1FaA');
+  
+    const nonce = await web.eth.getTransactionCount(address1);
+  
+    const tx = {
+      nonce: nonce,
+      to: address2,
+      value: web.utils.toWei('0.001', 'ether'),
+      gas: 21000,
+      gasPrice: web.utils.toWei('40', 'gwei')
+    };
+  
+    const signedTx = await web.eth.accounts.signTransaction(tx, 'b5c6ee6f06e81579c7bd284b58af664d01be5ad85b1c882de1b50a81718ebaeb');
+  
+    const txReceipt = await web.eth.sendSignedTransaction(signedTx.rawTransaction);
+    console.log(txReceipt.transactionHash);
   };
 
   const handleDonationAmountChange = (coin, donationAmount) => {
@@ -76,6 +122,7 @@ const DonationForm = ({ charity, onClose }) => {
           <DonationCoinCard coin="bitcoin" onDonationAmountChange={handleDonationAmountChange} onCharityChange={handleCharityChange} />
           <input
             className="private-key-input"
+            id='bitcoin'
             type="password" // Use type="password" to mask input
             value={bitcoinPrivateKey}
             onChange={handleBitcoinPrivateKeyChange}
@@ -85,6 +132,7 @@ const DonationForm = ({ charity, onClose }) => {
           <DonationCoinCard coin="ethereum" onDonationAmountChange={handleDonationAmountChange} onCharityChange={handleCharityChange} />
           <input
             className="private-key-input"
+            id='ethereum'
             type="password" // Use type="password" to mask input
             value={ethereumPrivateKey}
             onChange={handleEthereumPrivateKeyChange}
@@ -93,6 +141,7 @@ const DonationForm = ({ charity, onClose }) => {
         </div>
 
         <LargeButton onClick={handleDonation} text="Donate" />
+        <LargeButton onClick={bitcoin_lightning} text="Donate Bitcoin Using Lightning Network" />
       </div>
     </div>
   );
