@@ -208,7 +208,6 @@ src/
 This project is open-sourced under the MIT License. For more details, see the [LICENSE](LICENSE) file in the repository.
 
 ## Credits
-## Credits
 
 A heartfelt thank you to everyone who has contributed to this project:
 
