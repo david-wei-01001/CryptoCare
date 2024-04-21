@@ -216,13 +216,13 @@ This project exists thanks to all the people who contribute.
 <p align="center">
   <!-- Each <a> tag below represents a link to a contributor's GitHub profile -->
   <a href="https://github.com/david-wei-01001"  style="text-decoration: none;">
-    <img src="https://github.com/david-wei-01001.png?size=1000" style="border-radius: 50%;"  alt="Jiankun Wei" />
+    <img src="https://github.com/david-wei-01001.png?size=100" style="border-radius: 50%;"  alt="Jiankun Wei" />
   </a>
   <a href="https://github.com/sejungk"  style="text-decoration: none;">
     <img src="https://github.com/sejungk.png?size=100" style="border-radius: 50%;"  alt="Sejung Kim" />
   </a>
   <a href="https://github.com/theBatman07"  style="text-decoration: none;">
-    <img src="https://github.com/theBatman07.png?size=50" style="border-radius: 50%;"  alt="Gaurav Khater" />
+    <img src="https://github.com/theBatman07.png?size=5" style="border-radius: 50%;"  alt="Gaurav Khater" />
   </a>
 </p>
 
