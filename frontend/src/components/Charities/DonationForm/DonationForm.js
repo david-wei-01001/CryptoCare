@@ -7,7 +7,7 @@ import LargeButton from '../../Button/LargeButton.js';
 import DonationCoinCard from './DonationCoinCard.js';
 import './DonationForm.css';
 import { firestore } from '../../FireBase/firebase.js';
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, getDoc, updateDoc, arrayUnion } from 'firebase/firestore';
 import { useUser } from '../../contexts/UserContext.js';
 import Web3 from 'web3';
 
@@ -20,7 +20,36 @@ const DonationForm = ({ charity, onClose }) => {
   const [donatedCharity, setDonatedCharity] = useState(null);
   const [bitcoinPrivateKey, setBitcoinPrivateKey] = useState('');
   const [ethereumPrivateKey, setEthereumPrivateKey] = useState('');
+  const [checksumAddress, setChecksumAddress] = useState('');
   const user = useUser();
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const userRef = doc(firestore, "users", user.uid);
+        const docSnap = await getDoc(userRef);
+
+        if (docSnap.exists()) {
+          const userData = docSnap.data();
+          const ethereumAddress = userData.walletAddresses.ethereum;
+
+          if (ethereumAddress) {
+            // Convert the address to a checksum address
+            const checksumAddress = web.utils.toChecksumAddress(ethereumAddress);
+            setChecksumAddress(checksumAddress);
+          } else {
+            console.log('No Ethereum address found.');
+          }
+        } else {
+          console.log('No user data available.');
+        }
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    };
+
+    fetchUserData();
+  }, []);
 
 
 
@@ -58,8 +87,8 @@ const DonationForm = ({ charity, onClose }) => {
     const today = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
     const newDonationEntry = {
       CharityName: charityName,
-      BitcoinDonationAmount: bitcoinDonationAmount ? bitcoinDonationAmount : 0.0,
-      ETHDonationAmount: ethDonationAmount ? ethDonationAmount : 0.0,
+      BitcoinDonationAmount: bitcoinAmount ? bitcoinAmount : 0.0,
+      ETHDonationAmount: ethereumAmount ? ethereumAmount : 0.0,
       DonationDate: today
     };
 
@@ -79,7 +108,6 @@ const DonationForm = ({ charity, onClose }) => {
   }
 
   const handleDonation = async () => {
-    const [checksumAddress, setChecksumAddress] = useState('');
     const donationData = [];
 
     if (bitcoinAmount) {
@@ -108,33 +136,7 @@ const DonationForm = ({ charity, onClose }) => {
     
     // Get Ethereum private key
     // const ethereumPrivateKey = document.getElementById('ethereum').value;
-    useEffect(() => {
-      const fetchUserData = async () => {
-        try {
-          const userRef = doc(firestore, "users", user.uid);
-          const docSnap = await getDoc(userRef);
-  
-          if (docSnap.exists()) {
-            const userData = docSnap.data();
-            const ethereumAddress = userData.walletAddresses.ethereum;
-  
-            if (ethereumAddress) {
-              // Convert the address to a checksum address
-              const checksumAddress = web.utils.toChecksumAddress(ethereumAddress);
-              setChecksumAddress(checksumAddress);
-            } else {
-              console.log('No Ethereum address found.');
-            }
-          } else {
-            console.log('No user data available.');
-          }
-        } catch (error) {
-          console.error('Error fetching user data:', error);
-        }
-      };
-  
-      fetchUserData();
-    }, []);
+    
     // const address1 = web.utils.toChecksumAddress('0xc94DEB32c46234b5fc313eD1D4C91c04d77C0218');
 
 
@@ -159,8 +161,8 @@ const DonationForm = ({ charity, onClose }) => {
     const today = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
     const newDonationEntry = {
       CharityName: charityName,
-      BitcoinDonationAmount: bitcoinDonationAmount ? bitcoinDonationAmount : 0.0,
-      ETHDonationAmount: ethDonationAmount ? ethDonationAmount : 0.0,
+      BitcoinDonationAmount: bitcoinAmount ? bitcoinAmount : 0.0,
+      ETHDonationAmount: ethereumAmount ? ethereumAmount : 0.0,
       DonationDate: today
     };
 
