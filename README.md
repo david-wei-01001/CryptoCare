@@ -9,12 +9,6 @@ CryptoCare is transforming the world of philanthropy by harnessing the power of 
   <a href="#img3"><img src="./assets/3.webp" width="32%" id="img3" alt="Image 3"/></a>
 </p>
 
-<p align="center">
-  <a href="#img1">⚪</a>
-  <a href="#img2">⚪</a>
-  <a href="#img3">⚪</a>
-</p>
-
 ## Key Features of CryptoCare:
 
 Decentralized Donations: Directly connect with causes you care about. Your contributions go straight to the beneficiaries without any delays or unnecessary expenses.
