@@ -71,6 +71,7 @@ const firebaseConfig = {
 
 ## Directory Tree
 
+```css
 src/
 ├── components/
 │   ├── Auth/
@@ -142,3 +143,4 @@ src/
 ├── logo.svg
 ├── reportWebVitals.js
 └── setupTests.js
+```
