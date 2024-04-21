@@ -180,7 +180,7 @@ const DonationForm = ({ charity, onClose }) => {
           totalBitcoin: newTotalBitcoin,
           totalETH: newTotalETH
         });
-        console.log('Donation added to history successfully.');
+        alert('Donation added to history successfully.');
       } catch (error) {
         console.error('Error adding donation to history:', error);
       }
