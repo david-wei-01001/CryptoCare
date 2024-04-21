@@ -75,6 +75,7 @@ const Assets = () => {
                 if (!data.result || data.status !== "1") { // Check for success status or existence of result
                   throw new Error(data.message || 'Unknown error occurred');
                 }
+                const balanceInEther = Web3.utils.fromWei(data.result, 'ether');
                 setAssets(assets => assets.map(asset => 
                   asset.symbol === "ETH" ? {...asset, amount: data.result, accountId: walletAddresses.ethereum} : asset
                 ));

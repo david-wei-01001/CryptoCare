@@ -49,11 +49,12 @@ const DonationCoinCard = ({ coin, onDonationAmountChange }) => {
             // Retrieve the balance for Ethereum
             else if (coin === 'ethereum') {
               fetch(`https://api.etherscan.io/api?module=account&action=balance&address=${address}&tag=latest&apikey=${apikey}`)
-              .then(response => response.json())
+                .then(response => response.json())
                 .then(data => {
                   if (!data.result || data.status !== "1") { // Check for success status or existence of result
                     throw new Error(data.message || 'Unknown error occurred');
                   }
+                  const balanceInEther = Web3.utils.fromWei(data.result, 'ether');
                   setAvailableAmount(data.result.toString());
                 })
                 .catch(error => {

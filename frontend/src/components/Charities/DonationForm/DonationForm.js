@@ -82,6 +82,8 @@ const DonationForm = ({ charity, onClose }) => {
     // Get Ethereum private key
     // const ethereumPrivateKey = document.getElementById('ethereum').value;
     const address1 = web.utils.toChecksumAddress('0xc94DEB32c46234b5fc313eD1D4C91c04d77C0218');
+    
+
     const address2 = web.utils.toChecksumAddress('0xEFD1FB3DC9196B250E9CBD275D16D454da6F1FaA');
   
     const nonce = await web.eth.getTransactionCount(address1);
