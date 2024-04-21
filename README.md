@@ -16,6 +16,8 @@ Immutable Ledger: Every transaction is securely recorded on a public blockchain,
 Anonymity and Security: Donate anonymously using pseudonymous addresses. At CryptoCare, we prioritize your privacy, allowing you to support your favorite causes without disclosing your identity.
 User-Friendly Experience: With support for major cryptocurrencies like Bitcoin and Ethereum, our platform is designed for simplicity and ease of use, featuring low fees and instant transactions to facilitate your charitable activities.
 
+## Youtube
+
 <div align="center">
   <a href="https://www.youtube.com/watch?v=Mtdf4hMzg2s" title="Watch the video">
     <img src="./assets/4.webp" width="50%" alt="Watch the video"/>
@@ -25,6 +27,25 @@ User-Friendly Experience: With support for major cryptocurrencies like Bitcoin a
 
 #CryptoCare #BlockchainCharity #TransparentDonations #DecentralizedGiving #Bitcoin #Ethereum
 
+## FireBase
+
+In case of firebase project expiration, please:
+
+- set up a new firebase project
+- go to `frontend/src/components/FireBase/firebase.js` and modify the `firebaseConfig` to:
+
+```javascript
+const firebaseConfig = {
+  apiKey: "Your-API-Key",
+  authDomain: "your-auth-domain.firebaseapp.com",
+  projectId: "your-project-id",
+  storageBucket: "your-storage-bucket.appspot.com",
+  messagingSenderId: "your-messaging-sender-id",
+  appId: "your-app-id",
+  measurementId: "your-measurement-id"
+};
+
+```
 
 ## Steps to run
 
@@ -34,6 +55,7 @@ User-Friendly Experience: With support for major cryptocurrencies like Bitcoin a
 
 - install the following
 
+    - `npm install firebase`
     - `npm install react-scripts --save`
     - `npm install axios`
     - `npm install web3`
