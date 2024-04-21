@@ -16,6 +16,7 @@ CryptoCare is transforming the world of philanthropy by harnessing the power of 
 - [Firebase](#Firebase)
 - [Run](#Steps-to-run)
 - [Structure](#Directory-Tree)
+- [License](#License)
 
 ## Key Features of CryptoCare
 
@@ -159,3 +160,7 @@ src/
 ├── reportWebVitals.js
 └── setupTests.js
 ```
+
+## License
+
+This project is open-sourced under the MIT License. For more details, see the [LICENSE](LICENSE) file in the repository.
