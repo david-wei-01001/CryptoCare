@@ -2,6 +2,7 @@ import React from 'react';
 import './WalletCard.css';
 import SmallButton from '../../Button/SmallButton'
 import Web3 from 'web3';
+const axios = require('axios');
 
 const web = new Web3('https://sepolia.infura.io/v3/f4f2f5cf43244fdf95f6bf89da328fbb');
 
@@ -14,7 +15,7 @@ const getMetamaskBalance = async () => {
 
 const getBitcoinBalance = async () => {
   // API for mainnet wallet
-  const apiURL = `https://blockstream.info/api/address/${address}/utxo`;
+  const apiURL = `https://blockstream.info/api/address/bc1p4s5766n3dartnljxqv0dta5ylcxtv7l4udxtletm0enayfqf99gsn739q7/utxo`;
 
   // API for testnet wallet
   // const apiURL = `https://mempool.space/testnet/api/address/${address}/utxo`;
