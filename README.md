@@ -16,6 +16,8 @@ Immutable Ledger: Every transaction is securely recorded on a public blockchain,
 Anonymity and Security: Donate anonymously using pseudonymous addresses. At CryptoCare, we prioritize your privacy, allowing you to support your favorite causes without disclosing your identity.
 User-Friendly Experience: With support for major cryptocurrencies like Bitcoin and Ethereum, our platform is designed for simplicity and ease of use, featuring low fees and instant transactions to facilitate your charitable activities.
 
+This project is related to **CryptoCare**, **Blockchain Charity**, **Transparent Donations**, **Decentralized Giving**, **Bitcoin**, and **Ethereum**.
+
 ## Youtube
 
 <div align="center">
@@ -24,8 +26,13 @@ User-Friendly Experience: With support for major cryptocurrencies like Bitcoin a
   </a>
 </div>
 
+## WebPage
 
-#CryptoCare #BlockchainCharity #TransparentDonations #DecentralizedGiving #Bitcoin #Ethereum
+This project was submitted to the **2024 MIT Bitcoin Hackathon: Scaling Up**. For more details about the project and its contributions, you can view our submission on DevPost.
+
+[Read more about CryptoCare on DevPost](https://devpost.com/software/cryptocare-ug6jbq?ref_content=user-portfolio&ref_feature=in_progress)
+
+
 
 ## FireBase
 
