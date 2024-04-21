@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 // import firebase from 'firebase/app';
@@ -6,6 +6,9 @@ import axios from 'axios';
 import LargeButton from '../../Button/LargeButton.js';
 import DonationCoinCard from './DonationCoinCard.js';
 import './DonationForm.css';
+import { firestore } from '../../FireBase/firebase.js';
+import { doc, getDoc } from 'firebase/firestore';
+import { useUser } from '../../contexts/UserContext.js';
 import Web3 from 'web3';
 
 const web = new Web3('https://sepolia.infura.io/v3/f4f2f5cf43244fdf95f6bf89da328fbb');
@@ -17,6 +20,7 @@ const DonationForm = ({ charity, onClose }) => {
   const [donatedCharity, setDonatedCharity] = useState(null);
   const [bitcoinPrivateKey, setBitcoinPrivateKey] = useState('');
   const [ethereumPrivateKey, setEthereumPrivateKey] = useState('');
+  const user = useUser();
 
 
 
@@ -38,7 +42,7 @@ const DonationForm = ({ charity, onClose }) => {
 
     const url = "https://charity.u.voltageapp.io:8080/v1/invoices";
     const payload = {
-        value: 1000,
+        value: bitcoinAmount,
         memo: "for charity"
     };
 
@@ -50,9 +54,32 @@ const DonationForm = ({ charity, onClose }) => {
         console.error("Error creating invoice:", error);
         throw error;
     }
+
+    const today = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
+    const newDonationEntry = {
+      CharityName: charityName,
+      BitcoinDonationAmount: bitcoinDonationAmount ? bitcoinDonationAmount : 0.0,
+      ETHDonationAmount: ethDonationAmount ? ethDonationAmount : 0.0,
+      DonationDate: today
+    };
+
+    if (user?.uid) {
+      const userRef = doc(firestore, "users", user.uid);
+      try {
+        await updateDoc(userRef, {
+          donationHistory: arrayUnion(newDonationEntry)
+        });
+        console.log('Donation added to history successfully.');
+      } catch (error) {
+        console.error('Error adding donation to history:', error);
+      }
+    } else {
+      console.error('User not found, unable to update donation history.');
+    }
   }
 
   const handleDonation = async () => {
+    const [checksumAddress, setChecksumAddress] = useState('');
     const donationData = [];
 
     if (bitcoinAmount) {
@@ -81,8 +108,35 @@ const DonationForm = ({ charity, onClose }) => {
     
     // Get Ethereum private key
     // const ethereumPrivateKey = document.getElementById('ethereum').value;
-    const address1 = web.utils.toChecksumAddress('0xc94DEB32c46234b5fc313eD1D4C91c04d77C0218');
-    
+    useEffect(() => {
+      const fetchUserData = async () => {
+        try {
+          const userRef = doc(firestore, "users", user.uid);
+          const docSnap = await getDoc(userRef);
+  
+          if (docSnap.exists()) {
+            const userData = docSnap.data();
+            const ethereumAddress = userData.walletAddresses.ethereum;
+  
+            if (ethereumAddress) {
+              // Convert the address to a checksum address
+              const checksumAddress = web.utils.toChecksumAddress(ethereumAddress);
+              setChecksumAddress(checksumAddress);
+            } else {
+              console.log('No Ethereum address found.');
+            }
+          } else {
+            console.log('No user data available.');
+          }
+        } catch (error) {
+          console.error('Error fetching user data:', error);
+        }
+      };
+  
+      fetchUserData();
+    }, []);
+    // const address1 = web.utils.toChecksumAddress('0xc94DEB32c46234b5fc313eD1D4C91c04d77C0218');
+
 
     const address2 = web.utils.toChecksumAddress('0xEFD1FB3DC9196B250E9CBD275D16D454da6F1FaA');
   
@@ -91,15 +145,38 @@ const DonationForm = ({ charity, onClose }) => {
     const tx = {
       nonce: nonce,
       to: address2,
-      value: web.utils.toWei('0.001', 'ether'),
+      value: web.utils.toWei(ethereumAmount, 'ether'),
       gas: 21000,
       gasPrice: web.utils.toWei('40', 'gwei')
     };
   
-    const signedTx = await web.eth.accounts.signTransaction(tx, 'b5c6ee6f06e81579c7bd284b58af664d01be5ad85b1c882de1b50a81718ebaeb');
+    // const signedTx = await web.eth.accounts.signTransaction(tx, 'b5c6ee6f06e81579c7bd284b58af664d01be5ad85b1c882de1b50a81718ebaeb');
+    const signedTx = await web.eth.accounts.signTransaction(tx, ethereumPrivateKey);
   
     const txReceipt = await web.eth.sendSignedTransaction(signedTx.rawTransaction);
     console.log(txReceipt.transactionHash);
+
+    const today = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
+    const newDonationEntry = {
+      CharityName: charityName,
+      BitcoinDonationAmount: bitcoinDonationAmount ? bitcoinDonationAmount : 0.0,
+      ETHDonationAmount: ethDonationAmount ? ethDonationAmount : 0.0,
+      DonationDate: today
+    };
+
+    if (user?.uid) {
+      const userRef = doc(firestore, "users", user.uid);
+      try {
+        await updateDoc(userRef, {
+          donationHistory: arrayUnion(newDonationEntry)
+        });
+        console.log('Donation added to history successfully.');
+      } catch (error) {
+        console.error('Error adding donation to history:', error);
+      }
+    } else {
+      console.error('User not found, unable to update donation history.');
+    }
   };
 
   const handleDonationAmountChange = (coin, donationAmount) => {

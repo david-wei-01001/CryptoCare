@@ -3,6 +3,7 @@ import './DonationForm.css';
 import { useUser } from '../../contexts/UserContext.js';
 import { firestore } from '../../FireBase/firebase.js';
 import { doc, getDoc } from 'firebase/firestore';
+import Web3 from 'web3';
 
 const DonationCoinCard = ({ coin, onDonationAmountChange }) => {
   const [availableAmount, setAvailableAmount] = useState('0.00');
