@@ -172,6 +172,14 @@ const DonationForm = ({ charity, onClose }) => {
         await updateDoc(userRef, {
           donationHistory: arrayUnion(newDonationEntry)
         });
+        const docSnap = await getDoc(userRef); // Re-fetch the document to get updated data
+        const userData = docSnap.data();
+        const newTotalBitcoin = (userData.totalBitcoin || 0) + (bitcoinAmount ? parseFloat(bitcoinAmount) : 0);
+        const newTotalETH = (userData.totalETH || 0) + (ethereumAmount ? parseFloat(ethereumAmount) : 0);
+        await updateDoc(userRef, {
+          totalBitcoin: newTotalBitcoin,
+          totalETH: newTotalETH
+        });
         console.log('Donation added to history successfully.');
       } catch (error) {
         console.error('Error adding donation to history:', error);
