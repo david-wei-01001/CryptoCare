@@ -9,6 +9,13 @@ CryptoCare is transforming the world of philanthropy by harnessing the power of 
   <a href="#img3"><img src="./assets/3.webp" width="32%" id="img3" alt="Image 3"/></a>
 </p>
 
+## Table of Contents
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Key Features of CryptoCare:
 
 Decentralized Donations: Directly connect with causes you care about. Your contributions go straight to the beneficiaries without any delays or unnecessary expenses.
@@ -28,19 +35,17 @@ This project is related to **CryptoCare**, **Blockchain Charity**, **Transparent
 
 ## WebPage
 
-This project was submitted to the **2024 MIT Bitcoin Hackathon: Scaling Up**.\
+This project was submitted to the **2024 MIT Bitcoin Hackathon: Scaling Up**.
 
 For more details about the project and its contributions, you can view our submission on DevPost.
 
 [Read more about CryptoCare on DevPost](https://devpost.com/software/cryptocare-ug6jbq?ref_content=user-portfolio&ref_feature=in_progress)
 
-
-
 ## FireBase
 
 In case of firebase project expiration, please:
 
-- set up a new firebase project
+- set up a new Firebase project
 - go to `frontend/src/components/FireBase/firebase.js` and modify the `firebaseConfig` to:
 
 ```javascript
