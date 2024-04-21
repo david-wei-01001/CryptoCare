@@ -25,6 +25,8 @@ const Assets = () => {
 
   const user = useUser();
 
+  const apikey = "KRVSXGU4WGUYZPXJVHQX1EF9J81G9QFNSF";
+
   useEffect(() => {
     if (user?.uid) {
       const fetchWalletData = async () => {
@@ -67,17 +69,12 @@ const Assets = () => {
 
           // Fetch Ethereum balance if address is present
           if (walletAddresses.ethereum && walletAddresses.ethereum !== "") {
-            fetch(`https://api.etherscan.io/api?module=account&action=balance&address=${walletAddresses.ethereum}&tag=latest&apikey=YourApiKeyToken`)
-            .then(response => {
-              if (!response.ok) {
-                  // If response status is not ok, parse and throw the error from the response body
-                  return response.json().then(errData => {
-                      throw new Error(errData.error || 'Unknown error occurred');
-                  });
-              }
-              return response.json();
-              })
+            fetch(`https://api.etherscan.io/api?module=account&action=balance&address=${walletAddresses.ethereum}&tag=latest&apikey=${apikey}`)
+              .then(response => response.json()) // Parse the JSON regardless of response status
               .then(data => {
+                if (!data.result || data.status !== "1") { // Check for success status or existence of result
+                  throw new Error(data.message || 'Unknown error occurred');
+                }
                 setAssets(assets => assets.map(asset => 
                   asset.symbol === "ETH" ? {...asset, amount: data.result, accountId: walletAddresses.ethereum} : asset
                 ));
