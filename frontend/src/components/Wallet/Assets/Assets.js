@@ -4,6 +4,8 @@ import { firestore } from '../../FireBase/firebase.js';
 import { doc, getDoc } from 'firebase/firestore';
 import { useUser } from '../../contexts/UserContext.js';
 import Web3 from 'web3';
+import { getBitcoinBalance, getMetamaskBalance } from "../WalletCard/WalletCard.js";
+import WalletCard from '../WalletCard/WalletCard.js';
 
 
 const Assets = () => {
@@ -33,6 +35,7 @@ const Assets = () => {
       const fetchWalletData = async () => {
         const userRef = doc(firestore, "users", user.uid);
         const docSnap = await getDoc(userRef);
+        const web3 = new Web3(new Web3.providers.HttpProvider('https://sepolia.infura.io/v3/YOUR_INFURA_PROJECT_ID'));
 
         if (docSnap.exists()) {
           const userData = docSnap.data();
@@ -40,28 +43,18 @@ const Assets = () => {
 
           // Fetch Bitcoin balance if address is present
           if (walletAddresses.bitcoin && walletAddresses.bitcoin !== "") {
-            fetch(`https://api.blockcypher.com/v1/btc/main/addrs/${walletAddresses.bitcoin}/balance`)
-            .then(response => {
-              if (!response.ok) {
-                  // If response status is not ok, parse and throw the error from the response body
-                  return response.json().then(errData => {
-                      throw new Error(errData.error || 'Unknown error occurred');
-                  });
-              }
-              return response.json();
-              })
-              .then(data => {
-                console.log(data);
-                setAssets(assets => assets.map(asset => 
-                  asset.symbol === "BTC" ? {...asset, amount: data.balance.toString(), accountId: walletAddresses.bitcoin} : asset
-                ));
-              })
-              .catch(error => {
-                console.error('Error fetching Bitcoin balance:', error);
-                setAssets(assets => assets.map(asset => 
-                  asset.symbol === "BTC" ? {...asset, amount: "0.00", accountId: "No Available Wallet"} : asset
-                ));
-              });
+            try {
+              const bitcoinBalance = await getBitcoinBalance();
+              setAssets(assets => assets.map(asset =>
+                asset.symbol === "BTC" ? { ...asset, amount: bitcoinBalance.toString(), accountId: walletAddresses.bitcoin } : asset
+              ));
+            } catch (error) {
+              console.error('Error fetching Bitcoin balance:', error);
+              // Handle any errors, for example by setting the balance to 0 or an error message
+              setAssets(assets => assets.map(asset =>
+                asset.symbol === "BTC" ? { ...asset, amount: "0.00", accountId:"No Available Wallet" } : asset
+              ));
+            }
           } else {
             setAssets(assets => assets.map(asset => 
               asset.symbol === "BTC" ? {...asset, amount: "0.00", accountId: "No Available Wallet"} : asset
@@ -70,23 +63,18 @@ const Assets = () => {
 
           // Fetch Ethereum balance if address is present
           if (walletAddresses.ethereum && walletAddresses.ethereum !== "") {
-            fetch(`https://api.etherscan.io/api?module=account&action=balance&address=${walletAddresses.ethereum}&tag=latest&apikey=${apikey}`)
-              .then(response => response.json()) // Parse the JSON regardless of response status
-              .then(data => {
-                if (!data.result || data.status !== "1") { // Check for success status or existence of result
-                  throw new Error(data.message || 'Unknown error occurred');
-                }
-                const balanceInEther = Web3.utils.fromWei(data.result, 'ether');
-                setAssets(assets => assets.map(asset => 
-                  asset.symbol === "ETH" ? {...asset, amount: data.result, accountId: walletAddresses.ethereum} : asset
-                ));
-              })
-              .catch(error => {
-                console.error('Error fetching Ethereum balance:', error);
-                setAssets(assets => assets.map(asset => 
-                  asset.symbol === "ETH" ? {...asset, amount: "0.00", accountId: "No Available Wallet"} : asset
-                ));
-              });
+            try {
+              const ethereumBalance = await getMetamaskBalance(walletAddresses.ethereum);
+              setAssets(assets => assets.map(asset =>
+                asset.symbol === "ETH" ? { ...asset, amount: ethereumBalance.toString(), accountId: walletAddresses.ethereum } : asset
+              ));
+            } catch (error) {
+              console.error('Error fetching Ethereum balance:', error);
+              // Handle any errors, for example by setting the balance to 0 or an error message
+              setAssets(assets => assets.map(asset =>
+                asset.symbol === "ETH" ? { ...asset, amount: "0.00", accountId: "No Available Wallet" } : asset
+              ));
+            }
           } else {
             setAssets(assets => assets.map(asset => 
               asset.symbol === "ETH" ? {...asset, amount: "0.00", accountId: "No Available Wallet"} : asset

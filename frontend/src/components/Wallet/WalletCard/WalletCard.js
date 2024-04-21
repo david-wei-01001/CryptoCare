@@ -6,14 +6,14 @@ const axios = require('axios');
 
 const web = new Web3('https://sepolia.infura.io/v3/f4f2f5cf43244fdf95f6bf89da328fbb');
 
-const getMetamaskBalance = async () => {
+export const getMetamaskBalance = async () => {
   const balanceWei = await web.eth.getBalance('0xc94DEB32c46234b5fc313eD1D4C91c04d77C0218');
   const balanceEth = web.utils.fromWei(balanceWei, 'ether');
   console.log(balanceEth);
   return balanceEth;
 }
 
-const getBitcoinBalance = async () => {
+export const getBitcoinBalance = async () => {
   // API for mainnet wallet
   const apiURL = `https://blockstream.info/api/address/bc1p4s5766n3dartnljxqv0dta5ylcxtv7l4udxtletm0enayfqf99gsn739q7/utxo`;
 
