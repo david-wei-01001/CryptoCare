@@ -11,7 +11,8 @@ Immutable Ledger: Every transaction is securely recorded on a public blockchain,
 Anonymity and Security: Donate anonymously using pseudonymous addresses. At CryptoCare, we prioritize your privacy, allowing you to support your favorite causes without disclosing your identity.
 User-Friendly Experience: With support for major cryptocurrencies like Bitcoin and Ethereum, our platform is designed for simplicity and ease of use, featuring low fees and instant transactions to facilitate your charitable activities.
 
-Youtube Video
+[![Watch the video](https://path_to_your_image.jpg)](https://www.youtube.com/watch?v=Mtdf4hMzg2s "Watch the video")
+
 
 #CryptoCare #BlockchainCharity #TransparentDonations #DecentralizedGiving #Bitcoin #Ethereum
 
