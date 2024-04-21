@@ -221,6 +221,9 @@ This project exists thanks to all the people who contribute.
   <a href="https://github.com/sejungk" style="text-decoration: none;">
     <img src="https://github.com/sejungk.png?size=100" style="border-radius: 50%;" alt="Sejung Kim" />
   </a>
+  <a href="https://github.com/theBatman07" style="text-decoration: none;">
+    <img src="https://github.com/theBatman07.png?size=20%" style="border-radius: 50%;" alt="Gaurav Khater" />
+  </a>
   
 </p>
 
