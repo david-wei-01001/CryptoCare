@@ -3,6 +3,7 @@ import './Assets.css';
 import { firestore } from '../../FireBase/firebase.js';
 import { doc, getDoc } from 'firebase/firestore';
 import { useUser } from '../../contexts/UserContext.js';
+import Web3 from 'web3';
 
 
 const Assets = () => {
@@ -75,6 +76,7 @@ const Assets = () => {
                 if (!data.result || data.status !== "1") { // Check for success status or existence of result
                   throw new Error(data.message || 'Unknown error occurred');
                 }
+                const balanceInEther = Web3.utils.fromWei(data.result, 'ether');
                 setAssets(assets => assets.map(asset => 
                   asset.symbol === "ETH" ? {...asset, amount: data.result, accountId: walletAddresses.ethereum} : asset
                 ));

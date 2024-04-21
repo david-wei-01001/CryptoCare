@@ -3,6 +3,7 @@ import './DonationForm.css';
 import { useUser } from '../../contexts/UserContext.js';
 import { firestore } from '../../FireBase/firebase.js';
 import { doc, getDoc } from 'firebase/firestore';
+import Web3 from 'web3';
 
 const DonationCoinCard = ({ coin, onDonationAmountChange }) => {
   const [availableAmount, setAvailableAmount] = useState('0.00');
@@ -49,11 +50,12 @@ const DonationCoinCard = ({ coin, onDonationAmountChange }) => {
             // Retrieve the balance for Ethereum
             else if (coin === 'ethereum') {
               fetch(`https://api.etherscan.io/api?module=account&action=balance&address=${address}&tag=latest&apikey=${apikey}`)
-              .then(response => response.json())
+                .then(response => response.json())
                 .then(data => {
                   if (!data.result || data.status !== "1") { // Check for success status or existence of result
                     throw new Error(data.message || 'Unknown error occurred');
                   }
+                  const balanceInEther = Web3.utils.fromWei(data.result, 'ether');
                   setAvailableAmount(data.result.toString());
                 })
                 .catch(error => {
