@@ -1,4 +1,4 @@
-# CharityBitcoinApp
+# Crypto Care
 
 ## Welcome to CryptoCare - Revolutionizing Charitable Giving with Blockchain Technology
 
