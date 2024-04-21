@@ -10,13 +10,13 @@ CryptoCare is transforming the world of philanthropy by harnessing the power of 
 </p>
 
 ## Table of Contents
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
+- [Features](#Key Features of CryptoCare)
+- [Youtube](#Youtube)
+- [Devpost](#Devpost)
 - [Contributing](#contributing)
 - [License](#license)
 
-## Key Features of CryptoCare:
+## Key Features of CryptoCare
 
 Decentralized Donations: Directly connect with causes you care about. Your contributions go straight to the beneficiaries without any delays or unnecessary expenses.
 Immutable Ledger: Every transaction is securely recorded on a public blockchain, ensuring that every donation is traceable from start to finish. This level of transparency builds trust and accountability, making your generosity completely transparent.
@@ -33,7 +33,7 @@ This project is related to **CryptoCare**, **Blockchain Charity**, **Transparent
   </a>
 </div>
 
-## WebPage
+## Devpost
 
 This project was submitted to the **2024 MIT Bitcoin Hackathon: Scaling Up**.
 
