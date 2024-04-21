@@ -1,7 +1,48 @@
 import React from 'react';
 import './WalletCard.css';
 import SmallButton from '../../Button/SmallButton'
+import Web3 from 'web3';
 
+const web = new Web3('https://sepolia.infura.io/v3/f4f2f5cf43244fdf95f6bf89da328fbb');
+
+const getMetamaskBalance = async () => {
+  const balanceWei = await web.eth.getBalance('0xc94DEB32c46234b5fc313eD1D4C91c04d77C0218');
+  const balanceEth = web.utils.fromWei(balanceWei, 'ether');
+  console.log(balanceEth);
+  return balanceEth;
+}
+
+const getBitcoinBalance = async () => {
+  // API for mainnet wallet
+  const apiURL = `https://blockstream.info/api/address/${address}/utxo`;
+
+  // API for testnet wallet
+  // const apiURL = `https://mempool.space/testnet/api/address/${address}/utxo`;
+
+  try {
+      // Make the API call
+      const response = await axios.get(apiURL);
+
+      let totalBalance = 0;
+
+      if (response.status === 200) {
+          const data = response.data;
+
+          data.forEach(utxo => {
+              totalBalance += utxo.value;
+          });
+
+          // console.log(`Total Balance: ${totalBalance} satoshis`);
+      } else {
+          console.error(`Error: API request failed with status code ${response.status}`);
+      }
+
+      return totalBalance;
+  } catch (error) {
+      console.error("Error:", error);
+      throw error;
+  }
+}
 
 const WalletCard = () => {
   return (
