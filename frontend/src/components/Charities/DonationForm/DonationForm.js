@@ -140,7 +140,7 @@ const DonationForm = ({ charity, onClose }) => {
 
     const address2 = web.utils.toChecksumAddress('0xEFD1FB3DC9196B250E9CBD275D16D454da6F1FaA');
   
-    const nonce = await web.eth.getTransactionCount(address1);
+    const nonce = await web.eth.getTransactionCount(checksumAddress);
   
     const tx = {
       nonce: nonce,
