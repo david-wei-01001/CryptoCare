@@ -28,7 +28,9 @@ This project is related to **CryptoCare**, **Blockchain Charity**, **Transparent
 
 ## WebPage
 
-This project was submitted to the **2024 MIT Bitcoin Hackathon: Scaling Up**. For more details about the project and its contributions, you can view our submission on DevPost.
+This project was submitted to the **2024 MIT Bitcoin Hackathon: Scaling Up**.\
+
+For more details about the project and its contributions, you can view our submission on DevPost.
 
 [Read more about CryptoCare on DevPost](https://devpost.com/software/cryptocare-ug6jbq?ref_content=user-portfolio&ref_feature=in_progress)
 
