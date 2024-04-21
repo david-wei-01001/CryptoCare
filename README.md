@@ -3,12 +3,17 @@
 ## Welcome to CryptoCare - Revolutionizing Charitable Giving with Blockchain Technology
 
 CryptoCare is transforming the world of philanthropy by harnessing the power of blockchain technology. Our platform leverages Bitcoin and Ethereum to create a transparent, efficient, and decentralized donation system that minimizes administrative costs and eliminates the need for intermediaries.
+<p align="center">
+  <a href="#img1"><img src="./assets/1.webp" width="32%" id="img1" alt="Image 1"/></a>
+  <a href="#img2"><img src="./assets/2.webp" width="32%" id="img2" alt="Image 2"/></a>
+  <a href="#img3"><img src="./assets/3.webp" width="32%" id="img3" alt="Image 3"/></a>
+</p>
 
-<a href="#img1"><img src="./assets/1.webp" width="100%" id="img1" alt="Image 1"/></a>
-<a href="#img2"><img src="./assets/2.webp" width="100%" id="img2" alt="Image 2"/></a>
-<a href="#img3"><img src="./assets/3.webp" width="100%" id="img3" alt="Image 3"/></a>
-Click the dots to view each image:
-[⚪](#img1) [⚪](#img2) [⚪](#img3)
+<p align="center">
+  <a href="#img1">⚪</a>
+  <a href="#img2">⚪</a>
+  <a href="#img3">⚪</a>
+</p>
 
 ## Key Features of CryptoCare:
 
