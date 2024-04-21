@@ -42,7 +42,7 @@ const DonationForm = ({ charity, onClose }) => {
 
     const url = "https://charity.u.voltageapp.io:8080/v1/invoices";
     const payload = {
-        value: bitcoinAmount,
+        value: +bitcoinAmount,
         memo: "for charity"
     };
 
