@@ -68,3 +68,77 @@ const firebaseConfig = {
 - go to `http://localhost:3000`
 
 - Enjoy!
+
+## Directory Tree
+
+src/
+├── components/
+│   ├── Auth/
+│   │   ├── Login/
+│   │   │   ├── Login.css
+│   │   │   └── Login.js
+│   │   └── Register/
+│   │       ├── Register.css
+│   │       └── Register.js
+│   ├── Button/
+│   │   ├── Button.css
+│   │   ├── LargeButton.js
+│   │   ├── SmallButton.js
+│   │   └── SmallStrokedButton.js
+│   ├── Charities/
+│   │   ├── CharityCard/
+│   │   │   ├── CharityCard.css
+│   │   │   └── CharityCard.js
+│   │   ├── Data/
+│   │   │   └── CharityData.js
+│   │   ├── DonationForm/
+│   │   │   ├── DonationCoinCard.js
+│   │   │   ├── DonationForm.css
+│   │   │   ├── DonationForm.js
+│   │   │   └── transferCoin.js
+│   │   ├── IndividualCharityPage/
+│   │   │   ├── IndividualCharityPage.css
+│   │   │   └── IndividualCharityPage.js
+│   │   ├── Charities.css
+│   │   └── Charities.js
+│   ├── Dashboard/
+│   │   ├── DonationHistory/
+│   │   │   ├── DonationHistory.css
+│   │   │   ├── DonationHistory.js
+│   │   │   └── DonationHistoryEmptyCard.js
+│   │   ├── Donations/
+│   │   │   ├── Donations.css
+│   │   │   └── Donations.js
+│   │   ├── FeaturedCharities/
+│   │   │   ├── FeaturedCharities.css
+│   │   │   └── FeaturedCharities.js
+│   │   ├── Dashboard.css
+│   │   └── Dashboard.js
+│   ├── FireBase/
+│   │   └── firebase.js
+│   ├── NavigationSideBar/
+│   │   ├── NavbarLinks.js
+│   │   ├── NavigationSidebar.css
+│   │   └── NavigationSidebar.js
+│   ├── Wallet/
+│   │   ├── Assets/
+│   │   │   ├── Assets.css
+│   │   │   └── Assets.js
+│   │   ├── LinkWalletCard/
+│   │   │   ├── LinkWalletCard.css
+│   │   │   └── LinkWalletCard.js
+│   │   ├── WalletCard/
+│   │   │   ├── WalletCard.css
+│   │   │   └── WalletCard.js
+│   │   ├── Wallet.css
+│   │   └── Wallet.js
+│   └── contexts/
+│       └── UserContext.js
+├── App.css
+├── App.js
+├── App.test.js
+├── index.css
+├── index.js
+├── logo.svg
+├── reportWebVitals.js
+└── setupTests.js
