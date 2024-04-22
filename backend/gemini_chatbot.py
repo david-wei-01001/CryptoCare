@@ -27,7 +27,7 @@ def chatbot(question):
         partial_variables={"format_instructions": parser.get_format_instructions()},
     )
 
-    llm = GoogleGenerativeAI(model="gemini-pro", google_api_key="AIzaSyD43qPnjCN3Kv2DrJe1VZSczZYCiw0w2LM")
+    llm = GoogleGenerativeAI(model="gemini-pro", google_api_key="your_api_key")
 
     chain = prompt | llm | parser
 
