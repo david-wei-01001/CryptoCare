@@ -60,12 +60,34 @@ const CharityData = [
         "women-led",
         "humans"
     ]
+  },
+  {
+    "description": "Multiple is a (501c3) non-profit dedicated to catalyzing innovation and supporting technologies for the autism community at scale.. Multiple is the engine for innovation—a global community of dedicated families, entrepreneurs, funders, and experts c",
+    "name": "Multiple",
+    "profileUrl": "https://www.every.org/multiple-hub-inc",
+    "logoUrl": "https://res.cloudinary.com/everydotorg/image/upload/c_lfill,w_24,h_24,dpr_2/c_crop,ar_24:24/q_auto,f_auto,fl_progressive/profile_pics/kjse8kahl0bbtvh928nt",
+    "coverImageUrl": "https://res.cloudinary.com/everydotorg/image/upload/f_auto,c_limit,w_3840,q_80/profile_pics/ng3iqa1ryvslhjrcwkba",
+    "logoCloudinaryId": "profile_pics/kjse8kahl0bbtvh928nt",
+    "matchedTerms": [],
+    "slug": "multiple-hub-inc",
+    "location": "San Francisco, CA, USA",
+    "websiteUrl": "https://www.multiplehub.org",
+    "tags": [
+        "autism",
+        "housing",
+        "humans",
+        "education",
+        "disabilities",
+        "science",
+        "ukraine",
+        "youth"
+    ]
   }
 ];
 
 const FeaturedCharities = () => {
   return (
-    <div className="featured-charities-container">
+    <div className="dashboard-featured-charities-container">
         {CharityData.map((charity, index) => (
         <CharityCard key={index} charity={charity} />
       ))}

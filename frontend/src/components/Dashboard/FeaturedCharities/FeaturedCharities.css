@@ -1,5 +1,10 @@
-.featured-charities-container {
+.dashboard-featured-charities-container {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   margin-top: 5px;
+}
+
+.dashboard-featured-charities-container .charity-card {
+  width: 200px;
 }

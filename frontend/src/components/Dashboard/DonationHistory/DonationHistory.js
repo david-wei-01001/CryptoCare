@@ -45,11 +45,13 @@ const DonationHistory = () => {
         <div className="donation-history-card">
           {recentDonations.map((donation, index) => (
             <div key={index} className="donation-history-entry">
-              <div className="donation-charity-name">{donation.CharityName}</div>
-              <div className="donation-detail">
-              <div className="donation-amount">₿{donation.BitcoinDonationAmount}</div>
-              <div className="donation-amount">Ξ{donation.ETHDonationAmount}</div>
-              <div className="donation-date">{new Date(donation.DonationDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</div>
+              <div className="dontation-name-detail">
+                <div className="donation-charity-name weight-600">{donation.CharityName}</div>
+                <p className="donation-date">{new Date(donation.DonationDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</p>
+              </div>
+              <div className="donation-amount-detail">
+                <div className="donation-amount">₿{donation.BitcoinDonationAmount}</div>
+                <div className="donation-amount">Ξ{donation.ETHDonationAmount}</div>
             </div>
             </div>
           ))}

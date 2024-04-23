@@ -1,7 +1,7 @@
 
 .charity-card {
   height: 150px;
-  width: 220px;
+  width: 210px;
   box-shadow: 0px 4px 6px 1px rgba(0, 0, 0, 0.1);
 }
 
@@ -37,8 +37,9 @@
 .featured-charities-container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(272px, 0fr));
-  gap: 1px;
+  /* grid-template-columns: repeat(auto-fit, minmax(272px, 0fr)); */
+  grid-template-columns: repeat(auto-fit, minmax(267px, 0fr));
+  gap: 2px;
 }
 
 .pagination-button {
