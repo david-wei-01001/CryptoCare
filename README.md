@@ -4,9 +4,10 @@
 
 CryptoCare is transforming the world of philanthropy by harnessing the power of blockchain technology. Our platform leverages Bitcoin and Ethereum to create a transparent, efficient, and decentralized donation system that minimizes administrative costs and eliminates the need for intermediaries.
 <p align="center">
-  <a href="#img1"><img src="./assets/1.webp" width="32%" id="img1" alt="Image 1"/></a>
-  <a href="#img2"><img src="./assets/2.webp" width="32%" id="img2" alt="Image 2"/></a>
-  <a href="#img3"><img src="./assets/3.webp" width="32%" id="img3" alt="Image 3"/></a>
+  <a href="#img1"><img src="./assets/dashboard.png" width="24%" id="img1" alt="Image 1"/></a>
+  <a href="#img2"><img src="./assets/wallet.png" width="24%" id="img2" alt="Image 2"/></a>
+  <a href="#img3"><img src="./assets/donate.png" width="24%" id="img3" alt="Image 3"/></a>
+  <a href="#img3"><img src="./assets/charities.png" width="24%" id="img4" alt="Image 4"/></a>
 </p>
 
 ## Table of Contents
@@ -212,7 +213,7 @@ This project is open-sourced under the MIT License. For more details, see the [L
 A heartfelt thank you to everyone who has contributed to this project:
 
 - [Jiankun Wei](https://github.com/david-wei-01001) - Database Lead
-- [Sejung Kim](https://github.com/sejungk) - UX/UI Design Lead
+- [Sejung Kim](https://github.com/sejungk) - Frontend / UX Design Lead
 - [Gaurav Khater](https://github.com/theBatman07) - Crypto Lead
 
 
