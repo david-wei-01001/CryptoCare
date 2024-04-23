@@ -15,7 +15,7 @@ CryptoCare is transforming the world of philanthropy by harnessing the power of 
 - [What it does](#What-it-does)
 - [How we built it](#How-we-built-it)
 - [Video Demo](#Video-Demo)
-- [challenges](#Challenges)
+- [Challenges](#Challenges)
 - [What we learned](#What-we-learned)
 - [Next Step](#What's-next-for-CryptoCare)
 - [Devpost](#Devpost)
