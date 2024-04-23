@@ -6,7 +6,7 @@ import CharityData from './Data/CharityData';
 
 const Charities = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const charitiesPerPage = 9;
+  const charitiesPerPage = 12;
 
   const nextPage = () => {
     setCurrentPage(currentPage + 1);
