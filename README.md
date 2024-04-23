@@ -14,7 +14,7 @@ CryptoCare is transforming the world of philanthropy by harnessing the power of 
 - [Inspiration](#Inspiration)
 - [What it does](#What-it-does)
 - [How we built it](#How-we-built-it)
-- [Youtube](#Youtube)
+- [Video Demo](#Video-Demo)
 - [challenges](#Challenges)
 - [What we learned](#What-we-learned)
 - [Next Step](#What's-next-for-CryptoCare)
@@ -50,7 +50,7 @@ CryptoCare was developed using a blend of modern technologies and integrations t
 
 **Frontend** - React, JavaScript, CSS, Figma for designing Backend - JavaScript web3, infura api for Ethereum, Blockstream to get bitcoin balance, voltage for bitcoin lightning network, metamask, firebase
 
-## Youtube
+## Video Demo
 
 <div align="center">
   <a href="https://www.youtube.com/watch?v=Mtdf4hMzg2s" title="Watch the video">
